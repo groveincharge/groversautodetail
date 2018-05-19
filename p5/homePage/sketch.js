@@ -137,7 +137,7 @@ function setup(){
 function finished(data){
          console.log(data);
            };
-           return false;
+           return vacbuyButton();
         };//end newSubscriber
 
     function jumperbuyButton(){

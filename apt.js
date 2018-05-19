@@ -41,7 +41,7 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
     let data = request.params;
     let post = {firstName: data.firstName, lastName: data.lastName, email: data.email, streetAddress: data.streetAddress, suite: data.suite, city: data.city, state: data.state, zipCode: data.zipCode, phoneNumber: data.phoneNumber};
  let sql = 'INSERT INTO clients SET ?';
- let query = db.query(sql, post,(err, result,) =>{
+ let query = db.query(sql, post,(err, result) =>{
   if(err) throw err;
     console.log(result);
     response.send('Item inserted into table Successfully');
@@ -59,5 +59,4 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
     	phoneNumber: data.phoneNumber
     };
     console.log(clientObject);
-    response.send(clientObject);
 };
