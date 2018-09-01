@@ -12,39 +12,15 @@ function preload(){
          };
 };
 function setup(){
- let phone = createP('(757) 581-9156');
-     phone.style('text-align', 'center');
-     phone.style('font-size', '24px');
-		 phone.style('font-weight','bold');
-		 phone.style('background-color', '#009900');
-     phone.style('color', '#ffffff');
-     phone.style('width', '25%');
-     phone.style('line-height', '2.5em');
-     phone.style('margin-left', '35%');
-     phone.style('font-size', '30px');
 
-		 let canvas = createCanvas(620, 400); 
-        canvas.style('margin-left','3%');
+		// let canvas = createCanvas(620, 400); 
+     //   canvas.style('margin-left','3%');
 
-
- let bottomTitle = createP('We deliver better Results!');
-     bottomTitle.style('margin-left', '5%');
-     bottomTitle.style('background-color', '#006600');
-     bottomTitle.style('color', '#ffffff');
-     bottomTitle.style('font-size', '24px');
-     bottomTitle.style('width', '35%');
-     bottomTitle.style('padding', '2%');
-     bottomTitle.style('text-align', 'center');
-
-   let customer = select('#subscribe');
-       customer.mousePressed(subscribe);
- let prod = select('#product');
-     prod.mousePressed(newProduct); 
- let serviceOptions = select('#services');
-      serviceOptions.mousePressed(services); 
-     image(carArray[num], 0, 0, carArray[num].width/8, carArray[num].height/8);
-     setInterval(changeVehicle, 5000);
-      num++;
+ //let serviceOptions = select('#services');
+   //  serviceOptions.mousePressed(services); 
+     //image(carArray[num], 0, 0, carArray[num].width/8, carArray[num].height/8);
+  //   setInterval(changeVehicle, 5000);
+    //  num++;
 };//end setup
 
    function changeVehicle(){
@@ -59,23 +35,7 @@ function setup(){
 };//end changeVehicle
 
   function newProduct(){
-         
-          let subscribeContainer = select('#subscribeContainer');
-              subscribeContainer.hide();
-          let serviceContainer = select('#serviceContainer');
-              serviceContainer.hide();     
-         let productContainer = select('#productContainer');
-             productContainer.show();
-        let para = select('#para');
-              para.show();
-        let itemDescription = select('#description');
-              itemDescription.hide();
-         let priceContainer = select('#prices');
-             priceContainer.show();
-          let buyContainer = select('#jumperbuyButton');
-              buyContainer.hide();
           
-
         let item = select('#item');
               item.html("Jump Starter");
          let itemPrice = select('#itemPrice');
@@ -88,41 +48,55 @@ function setup(){
   };
 
   function hideForm(){
+      let intro = select('#intro');
+          intro.show();
      let serviceContainer = select('#serviceContainer');
-         serviceContainer.hide(); 
-    let productContainer = select('#productContainer')
-        productContainer.hide(); 
-    let subscribeContainer = select('#subscribeContainer');
-        subscribeContainer.show(); 
-
+         serviceContainer.hide();
+     let productContainer = select('#productContainer');
+         productContainer.show();
+     let para = select('#para'); 
+         para.show(); 
+     let miniVac = select('#minivacContainer');
+        miniVac.show(); 
+     let vacent = select('#vacent');
+         vacent.show();
+      let subscribe = select('.subscribe');
+          subscribe.show();          
+    let thanks = select('#thanks');
+       thanks.hide();        
+     let prices = select('#prices')
+         prices.hide();
+     let checkOut = select('#checkOut');
+         checkOut.show();           
+    let productForm = select('#productForm');
+        productForm.hide();
    let fieldSet = select('#subForm');
        fieldSet.hide();
+   let disclaimer = select('#disclaimer');
+       disclaimer.hide();    
    let buyButton = select('#buyButton');
        buyButton.hide();
-    let miniVac = select('#minivacContainer');
-        miniVac.show(); 
+    let description = select('#description'); 
+        description.hide();   
     let vacDescription = select('#vacDescription');
-        vacDescription.hide(); 
+        vacDescription.hide();    
+    let probuyButton = select('#probuyButton');
+        probuyButton.hide(); 
+     return newProduct();             
  };
 
 
 
-  function vacbuyButton(){
-            let serviceContainer = select('#serviceContainer');
-                serviceContainer.hide(); 
-           let productContainer = select('#productContainer')
-               productContainer.hide(); 
-           let subscribeContainer = select('#subscribeContainer');
-               subscribeContainer.show();  
+  function vacbuyButton(){   
            let buyButton = select('#buyButton');
                buyButton.show();
            let fieldSet = select('#subForm');
                fieldSet.hide();
-           let miniVac = select('#minivacContainer');
-               miniVac.hide();     
+           let thanks= select('#thanks');
+               thanks.show();     
   };
 
-  function newSubscriber(){ 
+ function newSubscriber(){ 
          let firstName = select('#firstName').value();
          let lastName = select('#lastName').value();
          let Email = select('#email').value();
@@ -140,64 +114,83 @@ function finished(data){
            return vacbuyButton();
         };//end newSubscriber
 
-    function jumperbuyButton(){
+    function jumperformButton(){
+           let productContainer = select('#productContainer');
+               productContainer.show(); 
+           let para = select('#para');
+               para.hide(); 
+           let productForm = select('#productForm');
+               productForm.show(); 
+           let probuyButton = select('#probuyButton');
+               probuyButton.hide(); 
+           let disclaimer = select('#disclaimer');
+               disclaimer.hide();    
+           let prices = select('#prices');
+               prices.hide(); 
+           let checkOut = select('#checkOut');
+               checkOut.hide();        
+                  };
+
+     function productBuyer(){
            let productContainer = select('#productContainer')
                productContainer.show(); 
-           let subscribeContainer = select('#subscribeContainer');
-               subscribeContainer.hide(); 
-           let serviceContainer = select('#serviceContainer');
-               serviceContainer.hide();      
-           let buyButton = select('#jumperbuyButton');
-               buyButton.show();
-           let description = select('#description');
-               description.hide();
-          let  prices = select('#prices');
+           let productForm = select('#productForm');
+               productForm.hide();
+           let prices = select('#prices');
                prices.hide(); 
-  };
- function subscribe(){
-           let productContainer = select('#productContainer')
-               productContainer.hide(); 
-           let serviceContainer = select('#serviceContainer');
-               serviceContainer.hide(); 
-           let subscribeContainer = select('#subscribeContainer');
-               subscribeContainer.show();  
+           let checkOut = select('#checkOut');
+               checkOut.hide();    
+           let para = select('#para');
+               para.hide(); 
+           let disclaimer = select('#disclaimer');
+               disclaimer.show();       
+           let probuyButton = select('#probuyButton');
+               probuyButton.show(); 
+                  };              
+ function subscribe(){ 
+           let miniVac = select('#minivacContainer');
+               miniVac.show(); 
            let buyButton = select('#buyButton');
                buyButton.hide();
-           let miniVac = select('#minivacContainer');
-               miniVac.hide(); 
-           let fieldSet = select('#subForm');
-               fieldSet.show(); 
+           let vacent = select('#vacent');
+               vacent.hide();           
+           let subForm = select('#subForm');
+               subForm.show(); 
+           let subscribe = select('.subscribe');
+               subscribe.hide();     
            };
 
  function togglejumperPicture(){
-            let serviceContainer = select('#serviceContainer');
-                serviceContainer.hide(); 
-            let subscribeContainer = select('#subscribeContainer');
-               subscribeContainer.hide();  
              let productContainer = select('#productContainer')
                  productContainer.show(); 
             let jumpPicture = select('#jumpStarter');
             let jumpFeatures = select('#description');
+            let prices = select('#prices');
+            let checkOut = select('#checkOut');
             let jumpToggle = select('#joggle').value();
       
                if(jumpToggle === 'jumpStarter'){
                     jumpPicture.show();
                     jumpFeatures.hide();
+                    prices.hide();
+                    checkOut.show();
                }
                else if(jumpToggle === 'description'){
+                     jumpPicture.hide();
+                     jumpFeatures.show();
+                     prices.hide();
+                     checkOut.show();      
+               }
+              else if(jumpToggle === 'price'){
                       jumpPicture.hide();
-                     jumpFeatures.show();       
+                      jumpFeatures.hide();
+                      prices.show();
+                      checkOut.show();
                };
                return false;
          };//end togglejumpPicture
 
    function togglevacPicture(){
-            let serviceContainer = select('#serviceContainer');
-                serviceContainer.hide(); 
-           let productContainer = select('#productContainer')
-                 productContainer.hide(); 
-          let subscribeContainer = select('#subscribeContainer');
-               subscribeContainer.show(); 
             let picture = select('#vacImage');
             let features = select('#vacDescription');
             let toggle = select('.voggle').value();
@@ -214,57 +207,32 @@ function finished(data){
          };//end togglePicture
 
    function services(){
-        let productContainer = select('#productContainer')
-            productContainer.hide(); 
-        let subscribeContainer = select('#subscribeContainer');
-            subscribeContainer.hide(); 
-        let serviceContainer = select('#serviceContainer');
-            serviceContainer.show(); 
-    showInterior();
-  };
- function showInterior(){
-    let interior = select('#interior');
-        interior.show();
-    let exterior = select('#exterior');
-        exterior.hide();
-    let engineClean = select('#engineClean');        
-        engineClean.hide();
-    let priceChart = select('#priceChart');
-        priceChart.hide();
-     return false;
-    };//end showInterior
-
-function showExterior(){
+       let intro = select('#intro');
+           intro.hide();
+       let serviceContainer = select('#serviceContainer');
+           serviceContainer.show();
       let interior = select('#interior');
-        interior.hide();
+        interior.show();
     let exterior = select('#exterior');
         exterior.show();
     let engineClean = select('#engineClean');        
-        engineClean.hide();
+        engineClean.show();   
     let priceChart = select('#priceChart');
-        priceChart.hide();
-     return false;
-    };//end showExterior
-
-function showengineClean(){
-      let interior = select('#interior');
-        interior.hide();
-    let exterior = select('#exterior');
-        exterior.hide();
-    let engineClean = select('#engineClean');        
-        engineClean.show();
-    let priceChart = select('#priceChart');
-        priceChart.hide();
-     return false;
-    };//end showengineClean
+        priceChart.hide();   
+        return false;
+ };
     
  function showpriceChart(){
+       let intro = select('#intro');
+           intro.hide();
+       let serviceContainer = select('#serviceContainer');
+           serviceContainer.show();
       let interior = select('#interior');
         interior.hide();
     let exterior = select('#exterior');
         exterior.hide();
     let engineClean = select('#engineClean');        
-        engineClean.hide();
+        engineClean.hide();    
     let priceChart = select('#priceChart');
         priceChart.show();
      return false;

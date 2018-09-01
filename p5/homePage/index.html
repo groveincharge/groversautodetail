@@ -8,39 +8,35 @@
     <!--<script src="../p5.min.js"></script>-->
     <script src="p5.dom.js"></script>
     <!--<script src="../addons/p5.sound.min.js"></script>-->
+     <script src="subscribeFolder/subscribe.js"></script>
     <script src="sketch.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
   <body onload="return hideForm()">
-    <header>Welcome to Grover's Auto Detail Service.</header>
 
-     <div id="pageContainer">
+    <div class="homepage"><button onclick="return hideForm()">Home Page</button></div>
 
-       <div id="navbar">
-         <button id="subscribe">Subscription Form</button>
-      <br />
-        <button id="product">Product of the Month</button>
-      <br />
-        <button id="services">Services</button> 
-      
-      </div><!--end navbar--> 
+    <div class="grid_items">
+        <div class="first">Accepting Subscribers</div>
+       <div class="second">Welcome to groversautodetail.site</div>
+       <div class="third">Featured Product</div>
+       <div class="forth">
+         <h1>Subscription Incentive</h1>
 
-     <div id="subscribeContainer">
-     <div id="minivacContainer" > 
-
-          <h1>Welcoming New Subscribers</h1>
+       <div id="minivacContainer"> 
         </br>
-        <span> New Subscribers to  <b>Grover's Auto Detail </b>will receive a 12v Mini-Vac for a Penny.
+        <div id="vacent">
+        <p> New Subscribers to  <b>Grover's Auto Detail </b>will receive a 12v Mini-Vac for a Penny.
         Just Pay <b>$ 0.01</b>, plus<b> $9.95</b> shipping & handling.
         This compact Mini-Vac gets the job done.  A handy and convevient tool for 
          your vehicle. <b>Get Updates </b>about new and discounted Products and Services as the seasons change.
-       </span>
+       </p>
        </br>
        </br>
-      <div id="vacImage">
-       <img src="imageFolder/miniVac.jpg" alt="12v mini vac" width="90%" height="90%"/>
-      </div>
+       <div id="vacImage">
+         <img src="imageFolder/miniVac.jpg" alt="12v mini vac" width="90%" height="90%"/>
+       </div>
 
        <span id="vacDescription">
        Feature below: Package:1*vacuum cleaner Material:ABS Colors: Blue,Orange 
@@ -60,24 +56,11 @@
         <option value="mini-Vac">Mini-Vac</option>
         <option value="description">Description</option>
       </select>
-    </div><!--end minivacContainer-->
+        </div><!--vacent-->
 
-      <div id="buyButton">
-         <h1>Thank You Customer!!</h1>
-        <span>Claim your Subscriber appreciation gift by clicking the <b>Buy Button</b>. All transactions are processed
-         through <b>Paypal</b>, and item will be shipped to subscriber address.</span>
-
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="NASRLBLLGFZP8">
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
-        
-      </div><!--end buyButton-->
-
-    <fieldset id="subForm">
-      <h2>Contact Info: Home/Office</h2>
+      <div id="subForm">
+      <fieldset>
+      <h1>Home/Office</h1><br/>
      First Name: <input type="text" name="firstName" id="firstName"/><br/><br/>
        Last Name: <input type="text" name="lastName" id="lastName"/><br/><br/>
        Email: <input type="email" name="email" id="email"/><br /><br/><br/>
@@ -87,130 +70,67 @@
      State: <input type="text" name="state" id="state"/><br/><br/>
      Zip Code: <input type="text" name="zipCode" id="zipCode"/><br/><br/>
      Phone Number: <input type="text" name="phoneNumber" id="phoneNumber"/><br/><br/>
-                    <input type="submit" value="Subscribe" id="newSubscriber" onclick="return newSubscriber()"/><br/><br/>
+                  <input type="submit" value="Subscribe" id="newSubscriber" onclick="return newSubscriber()"/><br/><br/>
     </fieldset>
-     </div><!--end subscribeContainer-->
+     </div><!--end subForm-->
 
-      <div id="productContainer" >
-    <!--  <h1>Compact Jump Starter<h1>-->
-      <div id="para">This Compact Jump Starter is a must for your Vehicle. This is not your
-            conventional Jump Starter. It is lightweight, powerful, and easy to operate. It has
-            a flashlight and conveniently placed USB ports for charging Phones, 
-           computers and other USB port products. Jump Start any Vehicle with a dead battery, cars, SUVs,Vans or Pick-up Trucks.
+        <div id="thanks">
+         <h1>Thank You Customer!!</h1>
+        <span>Claim your Subscriber appreciation gift by clicking the <b>Buy Button</b>. All transactions are processed
+         through <b>Paypal</b>, and item will be shipped to subscriber address. All new subscribers 
+         will receive a <b>comfirmatiom email</b> within 48hrs.</span>
+        </div><!--end thanks-->
 
-             <div id="jumpStarter">
-               <img src="imageFolder\jumpstarter.JPG" alt="12v Jump Starter" width="90%" height="90%"/>
-             </div>
+    </div><!--end minivacContainer-->
+     </div><!--end forth-->  
 
-     <span id="description">
-          Description
-          Features: 
-      1.Contain three 7043125 high rate cores 
-      2.LED lamp lighting, SOS, POS function 
-      3.Cloth pattern on the shell to offer better touch feeling, and scratch resistance. 
-      4.Small size. Light weight. Nice touch feeling. Multiple functions. 
-      5.Short circuit protection, over-current protection. Integrated circuit board, including software and hardware protection. 
-       Parameter: 
-      1. Output: 12V / 2A , 
-      2. Input: 12V / 1A 
-      3. Cycle Life: 3000 Times 
-      4. Starting Current: 200A 
-      5. Peak Current: 600A(3S) 
-      6. Operating Temperature: -20?~60? 
-      7. LED Quantity: 3 
-      8. Battery Capacity: 50800Mah 
-      9.Size: about 17*8*4 cm / 6.69*3.15*1.57 in 
-     10.Scope: Mobile phones, PSP, tablet, MP4, PMP, GPS and so on. 
-      Packing list: 
-     1* automotive mobile power supply 
-     1* charger 
-     1* car charger 
-     1* auto positive and negative ignition clip 
-     1* four in one USB data line 
-     1* instruction
-       </span>
+       <div class="fifth">
 
-      <select id="joggle" onclick="return togglejumperPicture()">
-        <option value="jumpStarter">Picture</option>
-        <option value="description">Description</option>
-      </select>
-    </div><!--end papa-->
-       
-     <div id="prices">
-       <table>
-         <tr><td>Item</td><td id="item"></td></tr>
-         <tr><td>Item Price</td><td id="itemPrice"></td></tr>
-         <tr><td>Shipping</td><td id="shippingPrice"></td></tr>
-         <tr><td>Total</td><td id="totalPrice"></td></tr>
-       </table>
-      
-      <fieldset>
-        <input type="submit" value="Checkout" id="checkOut" onclick="return jumperbuyButton()">
-      </fieldset> 
-      </div><!--prices-->
+        <header>(757) 581-9156</header>
 
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="jumperbuyButton">
-       <input type="hidden" name="cmd" value="_s-xclick">
-       <input type="hidden" name="hosted_button_id" value="2VZ33Y7SEP2L6">
-       <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-       <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-       </form>
-      </div> <!--end productContainer-->
+         <div id="intro">
+         <span><strong>Grover's Auto Detail</strong> is a mobile auto detailing service, the service comes to your location.
+       We have been operating in the Tidewater area since 2004. We service the people of Virginia Beach,
+       Chesapeake, Norfolk, Portsmouth, Hampton and Newport News. <strong>Professional auto detailing </strong>is mainly
+       a self learnt skill. We have the knowledge and experience to get the job done right. Upgrade the
+       look and feel of your vehicle with an awesome detail job, <strong>Today!!</strong>
+        </span>
+        <img src="imageFolder/vehicle2.jpg" alt="Mid-Size Car" width="90%" height="90%"/>
+    </div><!--end intro-->
+    <div id="serviceContainer">
+         <div id="interior">
+          <h1>Interior Detail</h1>
+              <p>
+                1. Vacuum carpet and mats.</br>
+                2. Spot clean carpet, mats and seats.</br>
+                3. Dust and clean dashboard and side panels.</br>
+                4. Clean center console and cup holders.</br>
+                5. Treat and protect dashboard and side panels.</br>
+                6. Clean windows.</br>
+              </p> 
+          </div><!--end inierior-->  
+          <div id="exterior" >
+            <h1>Exterior Detail</h1>
+              <p>
+                1. Handwash and chamois dry vehicle.</br>
+                2. Clean tires and rims.</br>
+                3. Remove minor scratches, tree sap and tar.</br>
+                4.Hand polish and buff exterior.</br>
+                5.Dress tires.</br>
+                6.Clean windows.</br>
+              </p>
+            </div><!--end exterior-->
+              <div id="engineClean">
+                 <h1>Engine Clean</h1>
+              <p>
+                1. Brush loose dirt and cover electrical connections.</br>
+                2. Degrease engine block and surrounding components.</br>
+                3. pressure wash engine block.</br>
+                4. Blow dry or drip dry block.</br>
+                5. Add protection and gloss.</br>
+              </p>     
+        </div><!--end engineClean-->
 
-      <div id="serviceContainer">
-            <div id="serviceBar">
-              <button type="text"  class="bar" onclick="return showInterior()">Interior</button>
-              <button type="text" class="bar" onclick="return showExterior()">Exterior</button>
-              <button type="text" class="bar" onclick="return showengineClean()">Engine</button>
-              <button type="text" class ="bar" onclick="return showpriceChart()">Price</button>
-            </div><!--end serviceBar-->
-   
-      <div class="clr"></div>
-          <div id="interior">
-           <h1>Interior Detail</h1>
-              <ol>
-                <li>Vacuum carpet and mats.</li>
-                <li>Spot clean carpet, mats and seats.</li>
-                <li>Dust and clean dashboard and side panels.</li>
-                <li>Clean center console and cup holders.</li>
-                <li>Treat and protect dashboard and side panels.</li>
-                <li>Clean windows.</li>
-              </ol>      
-          <div class="videobox">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/X2_zanz34kY" frameborder="0" allowfullscreen></iframe>
-          </div>  
-          <div class="videobox">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/DkM2o_C6lJA" frameborder="0" allowfullscreen></iframe>
-          </div>  
-           </div><!--end interior-->
-
-             <div id="exterior" >
-             <h1>Exterior Detail</h1>
-              <ol>
-                <li>Handwash and chamois dry vehicle.</li>
-                <li>Clean tires and rims.</li>
-                <li>Remove minor scratches, tree sap and tar.</li>
-                <li>Hand polish and buff exterior.</li>
-                <li>Dress tires.</li>
-                <li>Clean windows.</li>
-              </ol>
-                  <div class="videobox">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/DSqGy6CQUYw" frameborder="0" allowfullscreen></iframe>
-          </div>
-          </div><!--end exterior-->
-        
-        <div id="engineClean">
-              <h1>Engine Clean</h1>
-              <ol>
-                <li>Degrease engine block and surrounding components.</li>
-                <li>pressure wash engine block.</li>
-                <li>Blow dry or drip dry block.</li>
-              </ol>      
-        <div>
-            <img src="imageFolder\engineclean.JPG" alt="Picture of engine block" width="90%" height="90%" />
-          </div>
-          </div><!--end engineClean-->
-  
   <div id="priceChart">
   <h1>Price Chart</h1>
     <table>
@@ -268,22 +188,129 @@
       </tr>
       </tbody>
     </table>
-  </div><!--end priceChart-->  
-  </div><!--serviceContainer-->
+  </div><!--end priceChart-->
 
- </div><!--pageContainer--> 
-   <div id="intro">
-       <h1>About</h1>
-         <span><strong>Grover's Auto Detail</strong> is a mobile auto detailing service, the service comes to your location.
-       We have been operating in the Tidewater area since 2004. We service the people of Virginia Beach,
-       Chesapeake, Norfolk, Portsmouth, Hampton and Newport News. <strong>Professional auto detailing </strong>is mainly
-       a self learnt skill. We have the knowledge and experience to get the job done right. Upgrade the
-       look and feel of your vehicle with an awesome detail job, <strong>Today!!</strong>
-        </span>
-    </div><!--end intro-->
-    
+    </div><!--end serviceContainer-->    
+    </div><!--end fifth-->
+
+       <div class="sixth">
+        <h1> Compact Jumpstarter</h1>
+
+           <div id="productContainer" >
+    <!--  <h1>Compact Jump Starter<h1>-->
+      <div id="para">This Compact Jump Starter is a must for your Vehicle. This is not your
+            conventional Jump Starter. It is lightweight, powerful, and easy to operate. It has
+            a flashlight and conveniently placed USB ports for charging Phones, 
+           computers and other USB port products. Jump Start any Vehicle with a dead battery, cars, SUVs,Vans or Pick-up Trucks.
+
+             <div id="jumpStarter">
+               <img src="imageFolder\jumpstarter.JPG" alt="12v Jump Starter" width="90%" height="90%"/>
+             </div>
+
+     <span id="description">
+          Description:
+      1. Output: 12V / 2A , 
+      2. Input: 12V / 1A 
+      3. Cycle Life: 3000 Times 
+      4. Starting Current: 200A 
+      5. Peak Current: 600A(3S) 
+      6. Operating Temperature: -20?~60? 
+      7. LED Quantity: 3 
+      8. Battery Capacity: 50800Mah 
+      9.Size: about 17*8*4 cm / 6.69*3.15*1.57 in 
+     10.Scope: Mobile phones, PSP, tablet, MP4, PMP, GPS and so on. 
+      Packing list: 
+     1* automotive mobile power supply 
+     1* charger 
+     1* car charger 
+     1* auto positive and negative ignition clip 
+     1* four in one USB data line 
+     1* instruction
+       </span>
+        <div id="prices">
+          <table>
+             <tr><td>Item</td><td id="item"></td></tr>
+             <tr><td>Item Price</td><td id="itemPrice"></td></tr>
+             <tr><td>Shipping</td><td id="shippingPrice"></td></tr>
+             <tr><td>Total</td><td id="totalPrice"></td></tr>
+          </table>
+       </div><!--end prices-->
+
+      <select id="joggle" onclick="return togglejumperPicture()">
+        <option value="jumpStarter">Jump Starter</option>
+        <option value="description">Description</option>
+        <option value="price">Product Cost</option>
+      </select>
+    </div><!--end para-->
+     <div id="disclaimer">
+              <h1>***Notice***</h1>
+              <p>
+                All sales are final. Return and exchange policies are</br>
+                set by the manufacturer. We assist customers with</br>
+                having a comfortable buying experience.</br>
+                You will receive confirmation of you purchase by</br>
+                email within 24hours.</br>
+                Thanks for your purchase</br>
+                Complete transaction by clicking on the <b>Buy Button</b>.</br>
+              </p>
+          </div><!--end disclaimer-->
+
+        <fieldset id="productForm">
+      <h1>Home/Office</h1><br/>
+     First Name: <input type="text" name="firstName" id="firstName"/><br/><br/>
+       Last Name: <input type="text" name="lastName" id="lastName"/><br/><br/>
+       Email: <input type="email" name="email" id="email"/><br /><br/><br/>
+     Street Address: <input type="text" name="streetAddress" id="streetAddress"/><br/><br/>
+     Suite #: <input type="text" name="suite" id="suite"/><br/><br/>
+     City: <input type="text" name="city" id="city"/><br/><br/>
+     State: <input type="text" name="state" id="state"/><br/><br/>
+     Zip Code: <input type="text" name="zipCode" id="zipCode"/><br/><br/>
+     Phone Number: <input type="text" name="phoneNumber" id="phoneNumber"/><br/><br/>
+                  <input type="submit" value="Check Out" id="newSubscriber" onclick="return productBuyer()"/><br/><br/>
+    </fieldset>
+    </div> <!--end productContainer-->
+  </div><!--end sixth-->
+
+       <div class="seventh">
+        <div class="subscribe"><button onclick="return subscribe()">Subscription Form</button></div>
+    <div id="buyButton">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="NASRLBLLGFZP8">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div><!--end buyButton-->
+      </div><!--end seventh-->
+
+       <div class="eighth">
+        <div class="services">
+          <button onclick="return services()">Services</button>
+          <button onclick="return showpriceChart()">Price Chart</button>
+        </div><!--end services-->
+       </div><!--end eighth-->
+
+       <div class="nineth">
+        <div id="checkOut">
+      <fieldset>
+        <input type="submit" value="Proceed to Checkout" id="checkOut" onclick="return jumperformButton()">
+      </fieldset> 
+      </div><!--end checkOut-->
+
+        <div id="probuyButton">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="2VZ33Y7SEP2L6">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+      </div><!--probuyButton-->
+
+       </div><!--end nineth-->
+    </div><!--end gird_items-->
     <!--<footer>
        copyright &copy; 2017 Grover's Auto Detail.
      </footer>-->
-  </body>
+      </body>
 </html>
+
