@@ -1,31 +1,21 @@
 body{
 	background-color:#ccff99;
 }
+*{
+  margin: 0;	
+}
  .grid_items{
      	display: grid;
      	grid-template-columns: 1fr  2fr 1fr;
      	grid-template-rows: 50px 800px 50px;
-     	width: 90%;
-     	margin-left: 5%;
+     	width: 96%;
+     	margin-left: 2%;
      	margin-top:0;
      	grid-gap: 3px;
-          }
-    header{
-        font-size: 30px;
-        font-weight: bold;
-        background-color: #006600;
-        color: #ffffff;
-        width: 60%;
-       line-height: 3em;
-       margin-left: 20%;
-       font-size: 30px;
-       text-align: center;
-       margin-top: 2%;
-       border: 1px solid #006600;
-       border-radius: 5px;
-       margin-bottom:2%; 
-     }      
+          }     
         .first{
+        	width:100%;
+        	height:100%;
         	background-color:#99cc00;
         	color: #000000;
         	text-align: center;
@@ -33,65 +23,92 @@ body{
         	font-weight:bold;
         }
          .second{
+         	width:100%;
+         	height:100%;
+         }
+         .second h1{
+         	width: 100%;
+         	height:100%;
         	background-color:#ffcc00; 
         	color:#000000;
         	text-align: center;
-        	font-size: 36px;
-        	font-weight:bold;
-        }
+        	font-size: 32px;
+        	font-weight:bold; 
+             }
          .third{
-        	background-color:#99cc00;
+         	width:100%;
+         	height:100%;
+        }
+        .third h1{
+        	width: 100%;
+        	height:100%;
+            background-color:#99cc00;
         	color: #000000;
         	text-align: center;
         	font-size: 20px;
         	font-weight:bold;
-        }
+             }   
         .forth{
-        	margin: 0;
         	width: 100%;
         	height: 100%;
         }
-         .forth h1{
-           height:5%;
+        .forth h1{
+            height:10%;
         	background-color:#99cc00;
         	color: #000000;
         	text-align: center;
         	font-size: 22px;
-        	font-weight:bold;
-        }
+        	font-weight:bold; 
+                 }
          #minivacContainer{
 	        width:100%;
-	        height: 90%;
-	        margin:0;	
-	        padding:0;
+	        height: 100%;
               }
          #minivacContainer #vacent{
                    background-color: #009900;
                    width: 100%;
-                   height: 100%;
-                   margin: 0;
+                   height: 85%;
                  }     
-         #minivacContainer h1{
- 	          text-align: center;
-              color:#ffffff;
-	          font-size:28px;
-                 }
+         #minivacContainer #vacent #vacDescription{
+         	  width: 100%;
+                   } 
+            #minivacContainer #vacent #vacDescription p{
+              width: 90%;
+         	  color: #ffffff;
+  	          margin-top: 3%;
+  	          font-size: 18px;
+	  	      margin-bottom: 1%;
+	  	      text-align: center;
+                   }                    
         #minivacContainer #vacent p{
-        	 padding: 2%;
+        	 width: 90%;
+        	 padding: 1%;
              color:#ffffff;
 	         font-size:18px;
                  }
-        #minivacContainer #vacent b{
+        #minivacContainer #vacent p b{
             color: #ffcc00;
 		    font-size:22px;
               } 
         #minivacContainer #subForm{ 
         	      background-color: #009900;
         	       width:100%;
-        	       height:100%;
+        	       height:85%;
+                  }
+       #minivacContainer #subForm h1{
+           height:5%;
+        	background-color:#99cc00;
+        	color: #000000;
+        	text-align: center;
+        	font-size: 22px;
+        	font-weight:bold;
+        }         
+         #minivacContainer #subForm fieldset{ 
+        	       width:91%;
+        	       height:97%;
  	              font-size: 18px;
              	color: #ffffff;
-                  }          
+                  }                   
          #buyButton{
     	       border:1px solid #009900;
     	      border-radius: 10px;
@@ -141,9 +158,6 @@ body{
               margin-left: 5%;
  	          margin-top: 15%;
                 }	
-         #vacDescription{
-  	          margin-top: 15%;
-                   }
             .homepage{
               margin-bottom: 0;	
               margin-left: 2.5%;	
@@ -164,18 +178,21 @@ body{
   	        margin-top: 15%;
               }               
           .fifth{
-          	width: 96%;
+          	width: 100%;
           	height: 100%;
               }    
-         .fifth h1{
-            height:5%;
-        	background-color:#ffcc00;
-        	color: #000000;
-        	text-align: center;
-        	font-size: 30px;
-        	font-weight:bold; 
-        	padding-top: 5%;
-        }
+            header{
+               font-weight: bold;
+               background-color: #ffcc00;
+               color: #000000;
+               width: 100%;
+               height: 10%;
+               font-size: 36px;
+               text-align: center;
+                border: 1px solid #ffcc00;
+                border-radius: 5px;
+                padding-top: 5%; 
+                 } 
          #intro span{
 	         color:#ffffff;
 	         font-size:18px;
@@ -188,37 +205,67 @@ body{
         #intro{
             background-color:#009900;
             color:#000000;
-	        width:90%;
-	        margin-left:3%;
-	        margin-top:5%;
-	        margin-bottom: 5%;	
-	       padding:2%;
+	        width:98%;
+	        margin-top: 1%;
+	        margin-bottom: 3%;	
+	       padding:1%;
              }
-         #serviceContainer h1{
-	   	         margin-top: 0;
+          #intro img{
+	      	display:block;
+	      	margin-top:20%;
+	          }     
+           #serviceContainer{
+           	  width: 100%;
+           	  height: 100%;
+           }
+       #serviceContainer #serviceChart{
+       	                width: 100%;
+       	                height: 90%;
+                    }              
+	   #serviceContainer p{
+	   	        width: 100%;
+	   	        height: 30%;
+	   	        border:1px solid #009900;
+                border-radius: 5px;
+	   	        font-size: 18px;
+	   	        background-color:#009900;
+	         	text-align: center;
+                color:#ffffff;
+                margin-bottom: 5%; 
+                padding: 3% 0;
+                 }
+	        #serviceContainer h1{
+	   	         margin-top: 1%;
+	   	         margin-bottom: 1%;
 	   	         padding:1%;
 	   	         border:1px solid #ffcc00;
                  border-radius: 5px;
-	   	         font-size: 24px;
+	   	         font-size: 22px;
 	   	         font-weight: bold;
 	   	        background-color:#ffcc00;
 	         	text-align: center;
                 color:#000000; 
-                width:90%;
-                height: 30px;
-                margin-left: 5%;
-	       }       
-      #serviceContainer p{
-      	width: 96%;
-	   	background-color: #009900;
-	   	color:#ffffff;
-	   	padding: 3%;
-	   	font-size: 18px;
-	   	border:1px solid #009900;
-        border-radius: 5px;
-        list-style: none;
-        text-align: center;
-	   }
+                width:97%;
+                height: 5%;
+	            }          
+	   #serviceContainer #priceChart{
+	   	           width: 100%;
+	   	           height: 100%;
+	                }
+	   #serviceContainer #priceChart h1{
+	   	         margin-top: 1%;
+	   	         margin-bottom: 1%;
+	   	         padding:1%;
+	   	         border:1px solid #ffcc00;
+                 border-radius: 5px;
+	   	         font-size: 22px;
+	   	         font-weight: bold;
+	   	        background-color:#ffcc00;
+	         	text-align: center;
+                color:#000000; 
+                width:97%;
+                height: 5%;
+	       }            
         .sixth{
         	width: 100%;
         	height: 100%;
@@ -231,6 +278,17 @@ body{
         	font-size: 22px;
         	font-weight:bold; 
                  }
+         .sixth h1 b{
+	   	         border:1px solid #ffcc00;
+                 border-radius: 5px;
+	   	         font-size: 22px;
+	   	         font-weight: bold;
+	   	        background-color:#ffcc00;
+	         	text-align: center;
+                color:#000000; 
+                width:35%;
+                height: 10%;
+                   }        
           #joggle{
  	         text-align: center;
  	         width:90%;
@@ -303,11 +361,11 @@ body{
 	 	margin-left: 20%;
 	 }	
 	 #productContainer{
-	 	width: 96%;
-	 	height: 85%;
+	 	width: 100%;
+	 	height: 87%;
 	 	background-color: #009900;
-	 	color: #ffffff;
-	 	margin-top: 5%;  
+	 	color: #ffffff; 
+	 	margin-top: 2%;
 	           }  
 	   #description{
 	  	font-size: 18px;
@@ -317,12 +375,24 @@ body{
 	  	padding:2%;
 	            }
 	  #jumpStarter{
-	  	margin-top: 25%;
-	  	margin-bottom: 3%;
+	  	margin-top: 15%;
+	  	margin-bottom: 1%;
 	           }
-	 #productContainer h1{
-	 	      font-size: 28px;
-              text-align: center;
+	  #jumpStarter p{
+	  	  font-size: 18px;
+	  	  color: #ffffff;
+	         } 
+	   #jumpStarter p b{
+               font-size: 20px;
+               color: #ffcc00;
+	             }        
+	 #productContainer #productForm h1{
+	 	        height:5%;
+        	    background-color:#99cc00;
+        	    color: #000000;
+        	    text-align: center;
+        	    font-size: 22px;
+        	    font-weight:bold;
 	                    }               
 	  #productContainer #para{
 	  	   padding: 2%;
@@ -351,7 +421,14 @@ body{
 	        	                text-align: center;
    	                            margin-bottom: 3%;
 	                            }                  
-
+         #productContainer #productForm{
+         	          width: 100%;
+         	          height: 100%; 
+                       } 
+         #productContainer #productForm fieldset{
+         	          width: 90%;
+         	          height: 97%; 
+                       }                
 	     #productContainer #disclaimer b{
 	     	                 color: #ffcc00;
    	                        font-size: 22px;
@@ -393,8 +470,8 @@ body{
 	  	height:100%;
 	  	font-size: 18px;
 	          } 
-	           table {
-             height: 40%;
+	     table {
+             height: 74%;
              left: 10%;
              margin: 20px auto;
              overflow-y: scroll;
@@ -422,22 +499,19 @@ body{
             font-family: 'Lato', sans-serif;
             font-size: 18px;
             font-weight: 400;
-            padding: 20px;
+            padding: 15px;
             text-align: left;
             width: 33.3333%;
+            text-align: center;
               } 
           img{
 	      	display:block;
 	      	margin-left:5%;
-	          } 
-	    #intro img{
-	      	display:block;
-	      	margin-top:25%;
 	          }        	      
           .seventh{
           	  background-color:#ccff99; 
-              margin-top:10%;
-              width: 90%
+              width: 100%;
+              height:100%;
               margin-left:5%;
                  }
        .seventh .subscribe{
@@ -464,7 +538,11 @@ body{
 	             font-size: 22px;
 	             font-weight: bold;
 	             padding:2%;
-		            }                  
+		            } 
+	    .homepage{
+	    	width: 92%;
+	    	margin: 1% 2%;
+	    }                             
        .homepage  button {
 		border:1px solid #ccff99;
 	    border-radius:5px;
@@ -487,12 +565,13 @@ body{
 		  }
           .eighth{
         	background-color:#ccff99; 
-        	margin-top: 2%;
-        	margin-left: 20%;
+        	width: 100%;
+        	height:100%;
                 }    
         .eighth .services{
                margin-top: 2%;
                width:80%;
+               margin-left: 10%;
  	           margin-bottom:5%;
                   }
           .eighth .services button{
@@ -518,6 +597,8 @@ body{
 	             padding:2%;
                    }             	         	   
           .nineth{
+          	width: 100%;
+          	height:100%;
         	background-color:#ccff99; 
               }
  
@@ -528,3 +609,15 @@ body{
 			font-size:24px;	
 			font-weight:bold; 
 	          } 
+         @media only screen and (min-width: 320px) and (max-width: 480px){
+                         .grid_items{
+     	                        display: grid;
+     	                        grid-template-columns: 1fr ;
+     	                        grid-template-rows: repeat(3,50px 800px 50px);
+     	                        width: 90%;
+     	                        margin-left: 5%;
+     	                        margin-top:0;
+     	                        grid-gap: 3px;
+                                 }
+
+         }     

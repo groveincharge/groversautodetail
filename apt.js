@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.listen(3000,function(){
-     console.log('Server started on port 3000...');
+app.listen(3050,function(){
+     console.log('Server started on port 3050...');
 });
 
 //create connection

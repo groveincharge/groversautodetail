@@ -1,51 +1,19 @@
-let carArray = [];
-let  num = 0;
 let item = '  ';
 let shippingPrice = 0;
 let totalPrice = 0;
 let jumperPrice = 0;
 
-function preload(){
-         for (var i = 0; i < 5; i++) {
-           carArray[i] = loadImage("imageFolder/vehicle"+(i+1)+".JPG");
-
-         };
-};
-function setup(){
-
-		// let canvas = createCanvas(620, 400); 
-     //   canvas.style('margin-left','3%');
-
- //let serviceOptions = select('#services');
-   //  serviceOptions.mousePressed(services); 
-     //image(carArray[num], 0, 0, carArray[num].width/8, carArray[num].height/8);
-  //   setInterval(changeVehicle, 5000);
-    //  num++;
-};//end setup
-
-   function changeVehicle(){
-     if (num < carArray.length) {
-        image(carArray[num], 0, 0, carArray[num].width/8, carArray[num].height/8);
-      } 
-      else if(num === carArray.length){
-               num = 2;
-               image(carArray[num], 0, 0, carArray[num].width/8, carArray[num].height/8);
-                               }
-               num++;
-};//end changeVehicle
 
   function newProduct(){
-          
         let item = select('#item');
               item.html("Jump Starter");
          let itemPrice = select('#itemPrice');
-              itemPrice.html("$ 79.99");
+              itemPrice.html("$ 90.00");
         let itemShipping = select('#shippingPrice');
-              itemShipping.html("$ 10.95");
+              itemShipping.html("$ 9.99");
         let totalPrice = select('#totalPrice');
-            totalPrice.html("$ 90.94");
-
-  };
+            totalPrice.html("$ 99.99");
+                   };
 
   function hideForm(){
       let intro = select('#intro');
@@ -83,7 +51,7 @@ function setup(){
     let probuyButton = select('#probuyButton');
         probuyButton.hide(); 
      return newProduct();             
- };
+            };
 
 
 
@@ -94,7 +62,7 @@ function setup(){
                fieldSet.hide();
            let thanks= select('#thanks');
                thanks.show();     
-  };
+                    };
 
  function newSubscriber(){ 
          let firstName = select('#firstName').value();
@@ -110,9 +78,9 @@ function setup(){
           +streetAddress+'/'+suite+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
 function finished(data){
          console.log(data);
-           };
-           return vacbuyButton();
-        };//end newSubscriber
+                  };
+        return vacbuyButton();
+               };//end newSubscriber
 
     function jumperformButton(){
            let productContainer = select('#productContainer');
@@ -146,7 +114,8 @@ function finished(data){
                disclaimer.show();       
            let probuyButton = select('#probuyButton');
                probuyButton.show(); 
-                  };              
+                  };  
+
  function subscribe(){ 
            let miniVac = select('#minivacContainer');
                miniVac.show(); 
@@ -158,7 +127,7 @@ function finished(data){
                subForm.show(); 
            let subscribe = select('.subscribe');
                subscribe.hide();     
-           };
+                   };
 
  function togglejumperPicture(){
              let productContainer = select('#productContainer')
@@ -211,32 +180,24 @@ function finished(data){
            intro.hide();
        let serviceContainer = select('#serviceContainer');
            serviceContainer.show();
-      let interior = select('#interior');
-        interior.show();
-    let exterior = select('#exterior');
-        exterior.show();
-    let engineClean = select('#engineClean');        
-        engineClean.show();   
+       let serviceChart = select('#serviceChart');
+           serviceChart.show();     
     let priceChart = select('#priceChart');
         priceChart.hide();   
         return false;
- };
+              };
     
  function showpriceChart(){
        let intro = select('#intro');
            intro.hide();
        let serviceContainer = select('#serviceContainer');
            serviceContainer.show();
-      let interior = select('#interior');
-        interior.hide();
-    let exterior = select('#exterior');
-        exterior.hide();
-    let engineClean = select('#engineClean');        
-        engineClean.hide();    
+       let serviceChart = select('#serviceChart');
+           serviceChart.hide();       
     let priceChart = select('#priceChart');
         priceChart.show();
      return false;
-    };//end showpriceChart
+                };//end showpriceChart
 
 function draw() {
  

@@ -8,7 +8,6 @@
     <!--<script src="../p5.min.js"></script>-->
     <script src="p5.dom.js"></script>
     <!--<script src="../addons/p5.sound.min.js"></script>-->
-     <script src="subscribeFolder/subscribe.js"></script>
     <script src="sketch.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
@@ -19,8 +18,12 @@
 
     <div class="grid_items">
         <div class="first">Accepting Subscribers</div>
-       <div class="second">Welcome to groversautodetail.site</div>
-       <div class="third">Featured Product</div>
+       <div class="second">
+           <h1>Welcome to groversautodetail.site</h1>
+       </div>
+       <div class="third">
+              <h1>Featured Product</h1>
+          </div>
        <div class="forth">
          <h1>Subscription Incentive</h1>
 
@@ -32,13 +35,11 @@
         This compact Mini-Vac gets the job done.  A handy and convevient tool for 
          your vehicle. <b>Get Updates </b>about new and discounted Products and Services as the seasons change.
        </p>
-       </br>
-       </br>
        <div id="vacImage">
          <img src="imageFolder/miniVac.jpg" alt="12v mini vac" width="90%" height="90%"/>
        </div>
-
-       <span id="vacDescription">
+       <div id="vacDescription">
+       <p>
        Feature below: Package:1*vacuum cleaner Material:ABS Colors: Blue,Orange 
        Size:34cm*9.5cm*10cm(13.39"*3.74"*3.94")/L*W*H 
        Power line length: about 450cm(177.17") 
@@ -49,8 +50,9 @@
        Size:16.5cm*4cm/6.50"*1.57" Weight:50g Specifications: Fast and easy to use.
        Designed to clean blinds,keyboard, air-condition,etc.
        Washable and convenient.Insert mini-blind cleaner,one roller between each slat.
-       100% brand new and high quality Stylish and unique design,very popular. 
-       </span>
+       100% brand new and high quality Stylish and unique design,very popular.
+       </p> 
+       </div><!--end vacDescription-->
 
         <select class="voggle" onclick="return togglevacPicture()">
         <option value="mini-Vac">Mini-Vac</option>
@@ -62,8 +64,8 @@
       <fieldset>
       <h1>Home/Office</h1><br/>
      First Name: <input type="text" name="firstName" id="firstName"/><br/><br/>
-       Last Name: <input type="text" name="lastName" id="lastName"/><br/><br/>
-       Email: <input type="email" name="email" id="email"/><br /><br/><br/>
+     Last Name: <input type="text" name="lastName" id="lastName"/><br/><br/>
+     Email: <input type="email" name="email" id="email"/><br /><br/>
      Street Address: <input type="text" name="streetAddress" id="streetAddress"/><br/><br/>
      Suite #: <input type="text" name="suite" id="suite"/><br/><br/>
      City: <input type="text" name="city" id="city"/><br/><br/>
@@ -98,7 +100,8 @@
         <img src="imageFolder/vehicle2.jpg" alt="Mid-Size Car" width="90%" height="90%"/>
     </div><!--end intro-->
     <div id="serviceContainer">
-         <div id="interior">
+         <div id="serviceChart">
+         <section>
           <h1>Interior Detail</h1>
               <p>
                 1. Vacuum carpet and mats.</br>
@@ -108,8 +111,7 @@
                 5. Treat and protect dashboard and side panels.</br>
                 6. Clean windows.</br>
               </p> 
-          </div><!--end inierior-->  
-          <div id="exterior" >
+
             <h1>Exterior Detail</h1>
               <p>
                 1. Handwash and chamois dry vehicle.</br>
@@ -119,8 +121,7 @@
                 5.Dress tires.</br>
                 6.Clean windows.</br>
               </p>
-            </div><!--end exterior-->
-              <div id="engineClean">
+            
                  <h1>Engine Clean</h1>
               <p>
                 1. Brush loose dirt and cover electrical connections.</br>
@@ -129,8 +130,8 @@
                 4. Blow dry or drip dry block.</br>
                 5. Add protection and gloss.</br>
               </p>     
-        </div><!--end engineClean-->
-
+             </section>
+        </div><!--end serviceChart--> 
   <div id="priceChart">
   <h1>Price Chart</h1>
     <table>
@@ -194,7 +195,9 @@
     </div><!--end fifth-->
 
        <div class="sixth">
-        <h1> Compact Jumpstarter</h1>
+        <h1> Compact Jumpstarter</br></br>
+            <b>$ 99.99</b>
+        </h1>
 
            <div id="productContainer" >
     <!--  <h1>Compact Jump Starter<h1>-->
@@ -204,6 +207,7 @@
            computers and other USB port products. Jump Start any Vehicle with a dead battery, cars, SUVs,Vans or Pick-up Trucks.
 
              <div id="jumpStarter">
+               <p>Price includes <b>Shipping & Handling.</b></p></br>
                <img src="imageFolder\jumpstarter.JPG" alt="12v Jump Starter" width="90%" height="90%"/>
              </div>
 
@@ -242,6 +246,7 @@
         <option value="price">Product Cost</option>
       </select>
     </div><!--end para-->
+
      <div id="disclaimer">
               <h1>***Notice***</h1>
               <p>
@@ -254,8 +259,8 @@
                 Complete transaction by clicking on the <b>Buy Button</b>.</br>
               </p>
           </div><!--end disclaimer-->
-
-        <fieldset id="productForm">
+       <div id="productForm">
+      <fieldset>
       <h1>Home/Office</h1><br/>
      First Name: <input type="text" name="firstName" id="firstName"/><br/><br/>
        Last Name: <input type="text" name="lastName" id="lastName"/><br/><br/>
@@ -268,6 +273,7 @@
      Phone Number: <input type="text" name="phoneNumber" id="phoneNumber"/><br/><br/>
                   <input type="submit" value="Check Out" id="newSubscriber" onclick="return productBuyer()"/><br/><br/>
     </fieldset>
+  </div><!--end productForm-->
     </div> <!--end productContainer-->
   </div><!--end sixth-->
 
