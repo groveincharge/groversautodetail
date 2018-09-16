@@ -4,10 +4,43 @@ body{
 *{
   margin: 0;	
 }
+         .homepage{
+              margin: .5% 2%;	
+              border:1px solid #009900;
+    	      border-radius: 10px;
+    	      background-color: #009900;
+    	      color:#000000;
+    	      font-size:22px;
+    	      width: 92%;
+	 	      padding: 1% 2%;
+                 }  
+                            
+       .homepage  button {
+       	width: 25%;
+       	margin-left: 37.5%;
+		border:1px solid #ccff99;
+	    border-radius:5px;
+	    background-color: #ccff99;
+	    color: #000000;
+	    text-decoration:none;
+	    font-size: 22px;
+	    font-weight: bold;
+	    padding:2%;
+		  }
+  .homepage button:hover {
+		border:1px solid #ccff99;
+	    border-radius:5px;
+	    background-color: #ccff99;
+	    color: #ffffff;
+	    text-decoration:none;
+	    font-size: 22px;
+	    font-weight: bold;
+	    padding:2%;
+		  }          
  .grid_items{
      	display: grid;
      	grid-template-columns: 1fr  2fr 1fr;
-     	grid-template-rows: 50px 800px 50px;
+     	grid-template-rows: 50px 800px 50px 50px;
      	width: 96%;
      	margin-left: 2%;
      	margin-top:0;
@@ -16,16 +49,20 @@ body{
         .first{
         	width:100%;
         	height:100%;
-        	background-color:#99cc00;
+        	 }
+        .first h1{
+        	width:100%;
+        	height:100%;
+            background-color:#99cc00;
         	color: #000000;
         	text-align: center;
         	font-size: 20px;
         	font-weight:bold;
-        }
+             }
          .second{
          	width:100%;
          	height:100%;
-         }
+            }  
          .second h1{
          	width: 100%;
          	height:100%;
@@ -108,22 +145,7 @@ body{
         	       height:97%;
  	              font-size: 18px;
              	color: #ffffff;
-                  }                   
-         #buyButton{
-    	       border:1px solid #009900;
-    	      border-radius: 10px;
-    	      background-color: #009900;
-    	      color:#ffffff;
-    	      font-size:18px;
-    	      width: 90%;
-    	      margin-top:3%;
-	 	      margin-right:3%;
-	 	      padding: 2%;
-               } 
-         #buyButton form{
-    	     margin-top: 5%;
-             margin-left: 30%;
-              }  
+                  }                    
              #thanks{
           	  border:1px solid #009900;
     	      border-radius: 10px;
@@ -157,30 +179,14 @@ body{
  	          height: 5%;
               margin-left: 5%;
  	          margin-top: 15%;
-                }	
-            .homepage{
-              margin-bottom: 0;	
-              margin-left: 2.5%;	
-              border:1px solid #009900;
-    	      border-radius: 10px;
-    	      background-color: #009900;
-    	      color:#000000;
-    	      font-size:22px;
-    	      width: 90%;
-	 	      padding: 2%;
-                 }  
-             .homepage button{
-             	color:#000000;
-             	width: 25%;
-             	margin-left:35%;
-                    }         
+                }	        
          #vacImage{
   	        margin-top: 15%;
               }               
           .fifth{
           	width: 100%;
           	height: 100%;
-              }    
+              } 
             header{
                font-weight: bold;
                background-color: #ffcc00;
@@ -192,7 +198,7 @@ body{
                 border: 1px solid #ffcc00;
                 border-radius: 5px;
                 padding-top: 5%; 
-                 } 
+                 }       
          #intro span{
 	         color:#ffffff;
 	         font-size:18px;
@@ -309,57 +315,56 @@ body{
               margin-left:35%;
                 }
 
-  #firstName{
+  #firstName, #firstname{
 		   margin-top:3%;
 		   width:60%;
 	       font-size:18px;
 		   line-height:1.5em;
 		      }
-	 #lastName{
+	 #lastName, #lastname{
 		   width:60%;
 	       font-size:18px;
 		   line-height:1.5em;
 		      }
-	 #email{
+	 #email, #Email{
 		   width:90%;	
 	       font-size:18px;
 		   line-height:1.5em;
 		      } 
-	 #streetAddress{
+	 #streetAddress, #streetaddress{
 		   width:90%;
 	       font-size:18px;
 		   line-height:1.5em;
 		      }
-    #suite{
+    #suite, #Suite{
 		   width:60%;
 	       font-size:18px;
 		   line-height:1.5em;
 		      }	
-    #city{
+    #city, #City{
 		   width:60%;	
-	     font-size:18px;
+	        font-size:18px;
 		   line-height:1.5em;
 		      }	
-    #state{
+    #state, #State{
 		   width:60%;	
 	       font-size:18px;
 		   line-height:1.5em;
 		      }		
-     #zipCode{
+     #zipCode, #zipcode{
 		   width:60%;
 	       font-size:18px;
 		   line-height:1.5em;
 		      }	
-     #phoneNumber{
+     #phoneNumber, #phonenumber{
 		   width:50%;
 	       font-size:18px;
 		   line-height:1.5em;
 		      	}
 		
 	#probuyButton{
-	 	margin-top: 2.5%;
 	 	margin-left: 20%;
-	 }	
+	     }	
 	 #productContainer{
 	 	width: 100%;
 	 	height: 87%;
@@ -465,11 +470,20 @@ body{
 	  	  height:100%;
 	  	 font-size: 18px;
 	        }
-	  #checkOut{
+	  .checkOut{
+	  	background-color: #99cc00;
+	  	color: #000000;
+	  	margin: 0;
 	  	width:100%;
 	  	height:100%;
 	  	font-size: 18px;
-	          } 
+	    font-weight: bold;
+	          }
+	   .checkOut fieldset{
+	   	           padding:0;
+	   	           width:100%;
+	  	           height:100%;
+	               }           
 	     table {
              height: 74%;
              left: 10%;
@@ -509,17 +523,17 @@ body{
 	      	margin-left:5%;
 	          }        	      
           .seventh{
-          	  background-color:#ccff99; 
               width: 100%;
               height:100%;
-              margin-left:5%;
                  }
        .seventh .subscribe{
-  	             width:90%;
-                 margin-bottom:5%;
-	             margin-left:5%;
-		      } 
+  	             width:100%;
+  	             height:100%;
+		         } 
 		 .seventh .subscribe button{
+		 	     width: 80%;
+		 	     height: 100%;
+		 	     margin-left: 10%;
   	             border:1px solid #99cc00;
 	             border-radius:5px;
 	             background-color: #99cc00;
@@ -527,9 +541,12 @@ body{
 	             text-decoration:none;
 	             font-size: 22px;
 	             font-weight: bold;
-	             padding:2%;
+	             padding:1%;
 		            } 
 		  .seventh .subscribe button:hover{
+		  	     width:80%;
+		  	     height: 100%;
+		  	     margin-left: 10%;
   	             border:1px solid #99cc00;
 	             border-radius:5px;
 	             background-color: #99cc00;
@@ -537,46 +554,34 @@ body{
 	             text-decoration:none;
 	             font-size: 22px;
 	             font-weight: bold;
-	             padding:2%;
+	             padding:1%;
 		            } 
-	    .homepage{
-	    	width: 92%;
-	    	margin: 1% 2%;
-	    }                             
-       .homepage  button {
-		border:1px solid #ccff99;
-	    border-radius:5px;
-	    background-color: #ccff99;
-	    color: #000000;
-	    text-decoration:none;
-	    font-size: 22px;
-	    font-weight: bold;
-	    padding:2%;
-		  }
-		   .homepage button:hover {
-		border:1px solid #ccff99;
-	    border-radius:5px;
-	    background-color: #ccff99;
-	    color: #ffffff;
-	    text-decoration:none;
-	    font-size: 22px;
-	    font-weight: bold;
-	    padding:2%;
-		  }
-          .eighth{
-        	background-color:#ccff99; 
+		   .seventh #buyButton{
+    	      border:1px solid #009900;
+    	      border-radius: 10px;
+    	      background-color: #009900;
+    	      color:#ffffff;
+    	      font-size:18px;
+    	      width: 100%;
+    	      height: 100%;
+               } 
+         .seventh #buyButton form{
+    	     width: 40%;
+    	     height: 100%;
+    	     margin-left: 20%;
+              }          
+          .eighth{ 
         	width: 100%;
         	height:100%;
                 }    
         .eighth .services{
-               margin-top: 2%;
-               width:80%;
-               margin-left: 10%;
- 	           margin-bottom:5%;
+               width:100%;
+               height:100%;
                   }
           .eighth .services button{
           	        width: 40%;
-          	        margin-left: 5%;
+          	        height: 100%;
+          	        margin-left: 7.5%;
                     border:1px solid #99cc00;
 	                border-radius:5px;
 	                background-color: #99cc00;
@@ -587,6 +592,9 @@ body{
 	               padding:2%;
                        }
           .eighth .services button:hover{
+          	     width:40%;
+          	     height: 100%;
+          	     margin-left: 7.5%;
           	     border:1px solid #99cc00;
 	             border-radius:5px;
 	             background-color: #99cc00;
@@ -594,30 +602,56 @@ body{
 	             text-decoration:none;
 	             font-size: 22px;
 	             font-weight: bold;
-	             padding:2%;
                    }             	         	   
           .nineth{
+          	background-color: #99cc00;
           	width: 100%;
           	height:100%;
-        	background-color:#ccff99; 
-              }
- 
-		 footer {
-		    color:#ffffcc;
+             }
+          .tenth{
+          	grid-column-start: 1;
+          	grid-column-end: 4;
+          	background-color: #ffcc00;
+          	width: 100%;
+          	height:100%;
+              }         
+		 .tenth footer {
+		 	padding-top:.5%;
+		    color:#000000;
 	        text-align:center;
 			font-family:'Tangerine', cursive;
-			font-size:24px;	
+			font-size:28px;	
 			font-weight:bold; 
 	          } 
          @media only screen and (min-width: 320px) and (max-width: 480px){
-                         .grid_items{
-     	                        display: grid;
-     	                        grid-template-columns: 1fr ;
-     	                        grid-template-rows: repeat(3,50px 800px 50px);
-     	                        width: 90%;
-     	                        margin-left: 5%;
-     	                        margin-top:0;
-     	                        grid-gap: 3px;
+                            .second{
+         	                    width:100%;
+         	                    height:100%;
+                                 }  
+                           .second h1{
+         	                    width: 100%;
+                             	height:100%;
+        	                    background-color:#ffcc00; 
+        	                    color:#000000;
+        	                    text-align: center;
+        	                    font-size: 22px;
+        	                    font-weight:bold; 
                                  }
 
-         }     
+                            }  
+          @media only screen and (min-width: 480px) and (max-width: 768px){
+                            .second{
+         	                    width:100%;
+         	                    height:100%;
+                                 }  
+                           .second h1{
+         	                    width: 100%;
+                             	height:100%;
+        	                    background-color:#ffcc00; 
+        	                    color:#000000;
+        	                    text-align: center;
+        	                    font-size: 24px;
+        	                    font-weight:bold; 
+                                 }
+
+                            }                     

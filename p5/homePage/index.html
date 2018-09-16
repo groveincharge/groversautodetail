@@ -17,7 +17,9 @@
     <div class="homepage"><button onclick="return hideForm()">Home Page</button></div>
 
     <div class="grid_items">
-        <div class="first">Accepting Subscribers</div>
+        <div class="first">
+          <h1>Accepting Subscribers</h1>
+        </div>
        <div class="second">
            <h1>Welcome to groversautodetail.site</h1>
        </div>
@@ -30,10 +32,12 @@
        <div id="minivacContainer"> 
         </br>
         <div id="vacent">
-        <p> New Subscribers to  <b>Grover's Auto Detail </b>will receive a 12v Mini-Vac for a Penny.
-        Just Pay <b>$ 0.01</b>, plus<b> $9.95</b> shipping & handling.
-        This compact Mini-Vac gets the job done.  A handy and convevient tool for 
-         your vehicle. <b>Get Updates </b>about new and discounted Products and Services as the seasons change.
+        <p> This Mini-Vac retails for <b>$ 79.99</b>. 
+            New Subscribers to <b>Grover's Auto Detail</b> will receive it for
+            Just <b>$ 39.99</b>. Price includes <b>shipping & handling</b>.
+            This compact Mini-Vac gets the job done.  A handy and convevient tool for 
+            your vehicle. <b>Get Updates </b>about new and discounted
+           Products and Services as the seasons change.
        </p>
        <div id="vacImage">
          <img src="imageFolder/miniVac.jpg" alt="12v mini vac" width="90%" height="90%"/>
@@ -63,15 +67,15 @@
       <div id="subForm">
       <fieldset>
       <h1>Home/Office</h1><br/>
-     First Name: <input type="text" name="firstName" id="firstName"/><br/><br/>
-     Last Name: <input type="text" name="lastName" id="lastName"/><br/><br/>
-     Email: <input type="email" name="email" id="email"/><br /><br/>
-     Street Address: <input type="text" name="streetAddress" id="streetAddress"/><br/><br/>
-     Suite #: <input type="text" name="suite" id="suite"/><br/><br/>
-     City: <input type="text" name="city" id="city"/><br/><br/>
-     State: <input type="text" name="state" id="state"/><br/><br/>
-     Zip Code: <input type="text" name="zipCode" id="zipCode"/><br/><br/>
-     Phone Number: <input type="text" name="phoneNumber" id="phoneNumber"/><br/><br/>
+     First Name: <input type="text" id="firstName"/><br/><br/>
+     Last Name: <input type="text" id="lastName"/><br/><br/>
+     Email: <input type="email" id="email"/><br /><br/>
+     Street Address: <input type="text" id="streetAddress"/><br/><br/>
+     Suite #: <input type="text" id="suite"/><br/><br/>
+     City: <input type="text" id="city"/><br/><br/>
+     State: <input type="text" id="state"/><br/><br/>
+     Zip Code: <input type="text" id="zipCode"/><br/><br/>
+     Phone Number: <input type="text" id="phoneNumber"/><br/><br/>
                   <input type="submit" value="Subscribe" id="newSubscriber" onclick="return newSubscriber()"/><br/><br/>
     </fieldset>
      </div><!--end subForm-->
@@ -230,7 +234,12 @@
      1* auto positive and negative ignition clip 
      1* four in one USB data line 
      1* instruction
-       </span>
+      </span>
+      <select id="joggle" onclick="return togglejumperPicture()">
+        <option value="jumpStarter">Jump Starter</option>
+        <option value="description">Description</option>
+        <option value="price">Product Cost</option>
+      </select>
         <div id="prices">
           <table>
              <tr><td>Item</td><td id="item"></td></tr>
@@ -239,12 +248,6 @@
              <tr><td>Total</td><td id="totalPrice"></td></tr>
           </table>
        </div><!--end prices-->
-
-      <select id="joggle" onclick="return togglejumperPicture()">
-        <option value="jumpStarter">Jump Starter</option>
-        <option value="description">Description</option>
-        <option value="price">Product Cost</option>
-      </select>
     </div><!--end para-->
 
      <div id="disclaimer">
@@ -259,19 +262,19 @@
                 Complete transaction by clicking on the <b>Buy Button</b>.</br>
               </p>
           </div><!--end disclaimer-->
-       <div id="productForm">
+    <div id="productForm">
       <fieldset>
       <h1>Home/Office</h1><br/>
-     First Name: <input type="text" name="firstName" id="firstName"/><br/><br/>
-       Last Name: <input type="text" name="lastName" id="lastName"/><br/><br/>
-       Email: <input type="email" name="email" id="email"/><br /><br/><br/>
-     Street Address: <input type="text" name="streetAddress" id="streetAddress"/><br/><br/>
-     Suite #: <input type="text" name="suite" id="suite"/><br/><br/>
-     City: <input type="text" name="city" id="city"/><br/><br/>
-     State: <input type="text" name="state" id="state"/><br/><br/>
-     Zip Code: <input type="text" name="zipCode" id="zipCode"/><br/><br/>
-     Phone Number: <input type="text" name="phoneNumber" id="phoneNumber"/><br/><br/>
-                  <input type="submit" value="Check Out" id="newSubscriber" onclick="return productBuyer()"/><br/><br/>
+     First Name: <input type="text" id="firstname"/><br/><br/>
+     Last Name: <input type="text" id="lastname"/><br/><br/>
+     Email: <input type="email" id="Email"/><br /><br/><br/>
+     Street Address: <input type="text" id="streetaddress"/><br/><br/>
+     Suite #: <input type="text" id="Suite"/><br/><br/>
+     City: <input type="text" id="City"/><br/><br/>
+     State: <input type="text" id="State"/><br/><br/>
+     Zip Code: <input type="text" id="zipcode"/><br/><br/>
+     Phone Number: <input type="text" id="phonenumber"/><br/><br/>
+                <input type="submit" value="Check Out" id="newSubscriber" onclick="return procusInfo()"/><br/><br/>
     </fieldset>
   </div><!--end productForm-->
     </div> <!--end productContainer-->
@@ -280,12 +283,12 @@
        <div class="seventh">
         <div class="subscribe"><button onclick="return subscribe()">Subscription Form</button></div>
     <div id="buyButton">
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="NASRLBLLGFZP8">
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
+     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="F57BMXJQQAVSN">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
       </div><!--end buyButton-->
       </div><!--end seventh-->
 
@@ -297,26 +300,28 @@
        </div><!--end eighth-->
 
        <div class="nineth">
-        <div id="checkOut">
+        <div class="checkOut">
       <fieldset>
-        <input type="submit" value="Proceed to Checkout" id="checkOut" onclick="return jumperformButton()">
+        <input type="submit" class="checkOut" value="Proceed to Checkout" onclick="return jumperformButton()">
       </fieldset> 
       </div><!--end checkOut-->
 
         <div id="probuyButton">
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <input type="hidden" name="hosted_button_id" value="2VZ33Y7SEP2L6">
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="UVU5XCZ7W9D7U">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
           </form>
       </div><!--probuyButton-->
 
        </div><!--end nineth-->
+       <div class="tenth">
+         <footer>
+           copyright &copy; 2017 Grover's Auto Detail.
+         </footer>
+       </div><!--tenth-->
     </div><!--end gird_items-->
-    <!--<footer>
-       copyright &copy; 2017 Grover's Auto Detail.
-     </footer>-->
       </body>
 </html>
 

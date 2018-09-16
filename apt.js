@@ -36,8 +36,18 @@ db.connect((err) => {
 app.use(express.static('p5/homePage'));
 
  //Insert object into Data Base
-app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:state/:zipCode/:phoneNumber', newClient);
+ app.get('/productClient/:firstname/:lastname/:Email/:streetaddress/:Suite/:City/:State/:zipcode/:phonenumber', productClient);
+ function productClient(request, response){
+    let data = request.params;
+    let post = {firstname: data.firstname, lastname: data.lastname, Email: data.Email, streetaddress: data.streetaddress, Suite: data.Suite, City: data.City, State: data.State, zipcode: data.zipcode, phonenumber: data.phonenumber};
+    let sql = 'INSERT INTO productclients SET ?';
+    let query = db.query(sql, post,(err, result) =>{
+  if(err) throw err;
+   console.log(result); 
+ });
+ };//end productClient
 
+app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:state/:zipCode/:phoneNumber', newClient);
  function newClient(request, response){
     let data = request.params;
     let post = {firstName: data.firstName, lastName: data.lastName, email: data.email, streetAddress: data.streetAddress, suite: data.suite, city: data.city, state: data.state, zipCode: data.zipCode, phoneNumber: data.phoneNumber};

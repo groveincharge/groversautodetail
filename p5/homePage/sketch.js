@@ -34,7 +34,7 @@ let jumperPrice = 0;
        thanks.hide();        
      let prices = select('#prices')
          prices.hide();
-     let checkOut = select('#checkOut');
+     let checkOut = select('.checkOut');
          checkOut.show();           
     let productForm = select('#productForm');
         productForm.hide();
@@ -61,26 +61,44 @@ let jumperPrice = 0;
            let fieldSet = select('#subForm');
                fieldSet.hide();
            let thanks= select('#thanks');
-               thanks.show();     
+               thanks.show(); 
+               return false;    
                     };
 
  function newSubscriber(){ 
-         let firstName = select('#firstName').value();
-         let lastName = select('#lastName').value();
-         let Email = select('#email').value();
-         let streetAddress = select('#streetAddress').value();
-         let suite = select('#suite').value();
-         let city = select('#city').value();
-         let state = select('#state').value();
-         let zipCode =select('#zipCode').value();
-         let phoneNumber = select('#phoneNumber').value();
-         loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+Email+'/'
-          +streetAddress+'/'+suite+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
+             firstName = select('#firstName').value();
+             lastName = select('#lastName').value();
+             Email = select('#email').value();
+             streetAddress = select('#streetAddress').value();
+             suite = select('#suite').value();
+             city = select('#city').value();
+             state = select('#state').value();
+             zipCode =select('#zipCode').value();
+             phoneNumber = select('#phoneNumber').value();
+         loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+Email+'/'+streetAddress+'/'+suite+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
 function finished(data){
          console.log(data);
                   };
         return vacbuyButton();
                };//end newSubscriber
+
+
+      function procusInfo(){ 
+             firstname = select('#firstname').value();
+             lastname = select('#lastname').value();
+             Email = select('#Email').value();
+             streetaddress = select('#streetaddress').value();
+             Suite = select('#Suite').value();
+             City = select('#City').value();
+             State = select('#State').value();
+             zipcode =select('#zipcode').value();
+             phonenumber = select('#phonenumber').value();
+         loadJSON('/productClient/'+firstname+'/'+lastname+'/'+Email+'/'+streetaddress+'/'+Suite+'/'+City+'/'+State+'/'+zipcode+'/'+phonenumber, finished);
+    function finished(data){
+         console.log(data);
+                  };
+        return productBuyer();
+               };//end procusInfo           
 
     function jumperformButton(){
            let productContainer = select('#productContainer');
@@ -95,26 +113,26 @@ function finished(data){
                disclaimer.hide();    
            let prices = select('#prices');
                prices.hide(); 
-           let checkOut = select('#checkOut');
+           let checkOut = select('.checkOut');
                checkOut.hide();        
                   };
-
-     function productBuyer(){
+        function productBuyer(){
            let productContainer = select('#productContainer')
                productContainer.show(); 
            let productForm = select('#productForm');
                productForm.hide();
            let prices = select('#prices');
                prices.hide(); 
-           let checkOut = select('#checkOut');
+           let checkOut = select('.checkOut');
                checkOut.hide();    
            let para = select('#para');
                para.hide(); 
            let disclaimer = select('#disclaimer');
                disclaimer.show();       
            let probuyButton = select('#probuyButton');
-               probuyButton.show(); 
-                  };  
+               probuyButton.show();
+               return false;      
+           };//end productBuyer              
 
  function subscribe(){ 
            let miniVac = select('#minivacContainer');
@@ -135,7 +153,7 @@ function finished(data){
             let jumpPicture = select('#jumpStarter');
             let jumpFeatures = select('#description');
             let prices = select('#prices');
-            let checkOut = select('#checkOut');
+            let checkOut = select('.checkOut');
             let jumpToggle = select('#joggle').value();
       
                if(jumpToggle === 'jumpStarter'){
