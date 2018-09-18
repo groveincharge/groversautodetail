@@ -1,8 +1,27 @@
-let item = '  ';
-let shippingPrice = 0;
-let totalPrice = 0;
-let jumperPrice = 0;
+ let item = '  ';
+ let subscriberInfo = {};
+ let shippingPrice = 0;
+ let totalPrice = 0;
+ let jumperPrice = 0;
+ let firstName = ' ';
+ let lastName = ' ';
+ let email = ' ';
+ let streetAddress = ' ';
+ let suite = ' ';
+ let city = ' ';
+ let state = ' ';
+ let zipCode = ' ';
+ let phoneNumber = ' ';
 
+ let firstname = ' ';
+ let lastname = ' ';
+ let Email = ' ';
+ let streetaddress = ' ';
+ let Suite = ' ';
+ let City = ' ';
+ let State = ' ';
+ let zipcode = ' ';
+ let phonenumber = ' ';
 
   function newProduct(){
         let item = select('#item');
@@ -13,7 +32,7 @@ let jumperPrice = 0;
               itemShipping.html("$ 9.99");
         let totalPrice = select('#totalPrice');
             totalPrice.html("$ 99.99");
-                   };
+                   };             
 
   function hideForm(){
       let intro = select('#intro');
@@ -31,8 +50,10 @@ let jumperPrice = 0;
       let subscribe = select('.subscribe');
           subscribe.show();          
     let thanks = select('#thanks');
-       thanks.hide();        
-     let prices = select('#prices')
+       thanks.hide();   
+   let showSubscriber = select('#showSubscriber');
+       showSubscriber.hide();         
+     let prices = select('#prices');
          prices.hide();
      let checkOut = select('.checkOut');
          checkOut.show();           
@@ -41,7 +62,9 @@ let jumperPrice = 0;
    let fieldSet = select('#subForm');
        fieldSet.hide();
    let disclaimer = select('#disclaimer');
-       disclaimer.hide();    
+       disclaimer.hide(); 
+    let showBuyer = select('#showBuyer');
+        showBuyer.hide();       
    let buyButton = select('#buyButton');
        buyButton.hide();
     let description = select('#description'); 
@@ -53,7 +76,26 @@ let jumperPrice = 0;
      return newProduct();             
             };
 
-
+    function showSubscriber(){
+             let customerFirst = select('.firstName');
+                 customerFirst.html('First Name: '+firstName);
+             let customerLast = select('.lastName');
+                 customerLast.html('Last Name: '+lastName);
+             let customerEmail = select('.email');
+                 customerEmail.html('Email: '+email);
+             let customerstreetAddress = select('.streetAddress');
+                 customerstreetAddress.html('Street: '+streetAddress);
+             let customerSuite = select('.suite');
+                 customerSuite.html('Suite: '+suite);
+             let customerCity = select('.city');
+                 customerCity.html('City: '+city);
+             let customerState = select('.state');
+                 customerState.html('State: '+state);
+             let customerzipCode = select('.zipCode');
+                 customerzipCode.html('Zip Code: '+zipCode); 
+             let customerphoneNunber = select('.phoneNumber');
+                 customerphoneNunber.html('Phone Number: '+phoneNumber);                        
+            };  
 
   function vacbuyButton(){   
            let buyButton = select('#buyButton');
@@ -62,43 +104,68 @@ let jumperPrice = 0;
                fieldSet.hide();
            let thanks= select('#thanks');
                thanks.show(); 
+           let showSubscriber = select('#showSubscriber');
+                showSubscriber.show();    
                return false;    
                     };
 
  function newSubscriber(){ 
-             firstName = select('#firstName').value();
-             lastName = select('#lastName').value();
-             Email = select('#email').value();
-             streetAddress = select('#streetAddress').value();
-             suite = select('#suite').value();
-             city = select('#city').value();
-             state = select('#state').value();
-             zipCode =select('#zipCode').value();
-             phoneNumber = select('#phoneNumber').value();
-         loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+Email+'/'+streetAddress+'/'+suite+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
-function finished(data){
-         console.log(data);
-                  };
-        return vacbuyButton();
-               };//end newSubscriber
+              firstName = select('#firstName').value();
+              lastName = select('#lastName').value();
+              email = select('#email').value();
+              streetAddress = select('#streetAddress').value();
+              suite = select('#suite').value();
+              city = select('#city').value();
+              state = select('#state').value();
+              zipCode =select('#zipCode').value();
+              phoneNumber = select('#phoneNumber').value();
+         loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+email+'/'+streetAddress+'/'+suite+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
 
+        function finished(data){
+                   console.log(subscriberInfo);
+                  };  
+               showSubscriber();          
+        return vacbuyButton();
+         };//end newSubscriber
 
       function procusInfo(){ 
-             firstname = select('#firstname').value();
-             lastname = select('#lastname').value();
-             Email = select('#Email').value();
-             streetaddress = select('#streetaddress').value();
-             Suite = select('#Suite').value();
-             City = select('#City').value();
-             State = select('#State').value();
-             zipcode =select('#zipcode').value();
-             phonenumber = select('#phonenumber').value();
+                 firstname = select('#firstname').value();
+                 lastname = select('#lastname').value();
+                 Email = select('#Email').value();
+                 streetaddress = select('#streetaddress').value();
+                 Suite = select('#Suite').value();
+                 City = select('#City').value();
+                 State = select('#State').value();
+                 zipcode =select('#zipcode').value();
+                 phonenumber = select('#phonenumber').value();
          loadJSON('/productClient/'+firstname+'/'+lastname+'/'+Email+'/'+streetaddress+'/'+Suite+'/'+City+'/'+State+'/'+zipcode+'/'+phonenumber, finished);
     function finished(data){
          console.log(data);
                   };
+               showBuyer();    
         return productBuyer();
-               };//end procusInfo           
+               };//end procusInfo 
+
+       function showBuyer(){
+             let customerFirst = select('.firstname');
+                 customerFirst.html('First Name: '+firstname);
+             let customerLast = select('.lastname');
+                 customerLast.html('Last Name: '+lastname);
+             let customerEmail = select('.Email');
+                 customerEmail.html('Email: '+Email);
+             let customerstreetAddress = select('.streetaddress');
+                 customerstreetAddress.html('Street: '+streetaddress);
+             let customerSuite = select('.Suite');
+                 customerSuite.html('Suite: '+Suite);
+             let customerCity = select('.City');
+                 customerCity.html('City: '+City);
+             let customerState = select('.State');
+                 customerState.html('State: '+State);
+             let customerzipCode = select('.zipcode');
+                 customerzipCode.html('Zip Code: '+zipcode); 
+             let customerphoneNunber = select('.phonenumber');
+                 customerphoneNunber.html('Phone Number: '+phonenumber);                        
+            };                     
 
     function jumperformButton(){
            let productContainer = select('#productContainer');
@@ -110,7 +177,9 @@ function finished(data){
            let probuyButton = select('#probuyButton');
                probuyButton.hide(); 
            let disclaimer = select('#disclaimer');
-               disclaimer.hide();    
+               disclaimer.hide(); 
+           let showBuyer = select('#showBuyer');
+               showBuyer.hide();        
            let prices = select('#prices');
                prices.hide(); 
            let checkOut = select('.checkOut');
@@ -127,6 +196,8 @@ function finished(data){
                checkOut.hide();    
            let para = select('#para');
                para.hide(); 
+           let showBuyer = select('#showBuyer');
+               showBuyer.show();    
            let disclaimer = select('#disclaimer');
                disclaimer.show();       
            let probuyButton = select('#probuyButton');
@@ -144,7 +215,9 @@ function finished(data){
            let subForm = select('#subForm');
                subForm.show(); 
            let subscribe = select('.subscribe');
-               subscribe.hide();     
+               subscribe.hide(); 
+          let showSubscriber = select('#showSubscriber');
+              showSubscriber.hide();         
                    };
 
  function togglejumperPicture(){
@@ -178,6 +251,8 @@ function finished(data){
          };//end togglejumpPicture
 
    function togglevacPicture(){
+            let miniVac = select('#minivacContainer');
+                miniVac.show();
             let picture = select('#vacImage');
             let features = select('#vacDescription');
             let toggle = select('.voggle').value();
