@@ -3,6 +3,7 @@
  let shippingPrice = 0;
  let totalPrice = 0;
  let jumperPrice = 0;
+
  let firstName = ' ';
  let lastName = ' ';
  let email = ' ';
@@ -77,6 +78,8 @@
             };
 
     function showSubscriber(){
+             let customerStatus = select('.status');
+                 customerStatus.html('Status: '+'Suscriber Shipping Address');
              let customerFirst = select('.firstName');
                  customerFirst.html('First Name: '+firstName);
              let customerLast = select('.lastName');
@@ -147,6 +150,8 @@
                };//end procusInfo 
 
        function showBuyer(){
+             let customerStatus = select('.Status');
+                 customerStatus.html('Status: Customer Shipping Address');
              let customerFirst = select('.firstname');
                  customerFirst.html('First Name: '+firstname);
              let customerLast = select('.lastname');
