@@ -79,7 +79,7 @@
 
     function showSubscriber(){
              let customerStatus = select('.status');
-                 customerStatus.html('Status: '+'Suscriber Shipping Address');
+                 customerStatus.html('subscriber: '+'Mini-Vac Shipping Address');
              let customerFirst = select('.firstName');
                  customerFirst.html('First Name: '+firstName);
              let customerLast = select('.lastName');
@@ -151,7 +151,7 @@
 
        function showBuyer(){
              let customerStatus = select('.Status');
-                 customerStatus.html('Status: Customer Shipping Address');
+                 customerStatus.html('Customer: Item Shipping Address');
              let customerFirst = select('.firstname');
                  customerFirst.html('First Name: '+firstname);
              let customerLast = select('.lastname');

@@ -74,34 +74,100 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
 }; //end newClient
 
 //Display clients in database.
-app.get('/allClients/', clientel);
+       app.get('/allClients/', clientel);
+       function clientel(request, response){
+                        let firstName = ' ';
+                        let lastName = ' ';
+                        let email = ' ';
+                        let streetAddress = ' ';
+                        let suite = ' ';
+                        let city = ' ';
+                        let state = ' ';
+                        let zipCode = ' ';
+                        let phoneNumber = ' ';
+                        let customers = [];
 
- function clientel(request, response){
-      let customers = [];
-      let customerInfo = [];
-     let sql = 'SELECT * FROM clients';
-     let query = db.query(sql, (err, results) =>{
-     
-  if(err) throw err;
-   customers = results;
-  console.log(customers);
+       let sql = 'SELECT * FROM clients';
+       let query = db.query(sql, (err, results) =>{
 
-for (var i = 0; i < customers.length; i++) {
-    customerInfo[i] = {
-               'Status': 'Active Customer',
-               'First Name': customers[i].firstName,
-               'Last Name':  customers[i].lastName,
-               'Email': customers[i].email,
-               'Street Address': customers[i].streetAddress,
-               'Suite': customers[i].suite,
-               'City': customers[i].city,
-               'State': customers[i].state,
-               'Zip Code': customers[i].zipCode,
-               'Phone Number': customers[i].phoneNumber
-  };
-};
-  response.send(customerInfo);
- }); //end query
+                         if(err) throw err
+                          else customers = results;
+                         for (var i = 0; i < customers.length; i++) {
+                              firstName = customers[i].firstName;
+                              lastName  = customers[i].lastName;
+                              email = customers[i].email;
+                              streetAddress= customers[i].streetAddress;
+                              suite = customers[i].suite;
+                              city = customers[i].city;
+                              state = customers[i].state;
+                              zipCode = customers[i].zipCode;
+                              phoneNumber = customers[i].phoneNumber;
 
-  return false;
-}; //end clientel
+                                 let Customers ={
+                                          firstName : firstName,
+                                          lastName : lastName,
+                                          email : email,
+                                          streetAddress : streetAddress,
+                                          suite : suite,
+                                          city : city,
+                                          state : state,
+                                          zipCode : zipCode,
+                                          phoneNumber : phoneNumber
+                                            };
+                             console.log(Customers);
+                                };
+                              response.send(customers);
+                            
+                         }); //end query
+
+             return false;
+                }; //end clientel
+
+           app.get('/allCustomers/', customer);
+           function customer(request, response){
+                        let firstname = ' ';
+                        let lastname = ' ';
+                        let Email = ' ';
+                        let streetaddress = ' ';
+                        let Suite = ' ';
+                        let City = ' ';
+                        let State = ' ';
+                        let zipcode = ' ';
+                        let phonenumber = ' ';
+                        let customers = [];
+
+        let sql = 'SELECT * FROM productclients';
+        let query = db.query(sql, (err, results) =>{
+
+                         if(err) throw err
+                          else customers = results;
+                         for (var i = 0; i < customers.length; i++) {
+                              firstname = customers[i].firstname;
+                              lastname  = customers[i].lastname;
+                              Email = customers[i].Email;
+                              streetaddress= customers[i].streetaddress;
+                              Suite = customers[i].Suite;
+                              City = customers[i].City;
+                              State = customers[i].State;
+                              zipcode = customers[i].zipcode;
+                              phonenumber = customers[i].phonenumber;
+
+                                 let Customers ={
+                                          Firstname : firstname,
+                                          LastName : lastname,
+                                          email : Email,
+                                          StreetAddress : streetaddress,
+                                          Suite : Suite,
+                                          City : City,
+                                          State : State,
+                                          ZipCode : zipcode,
+                                          PhoneNumber : phonenumber
+                                            };
+                             console.log(Customers);
+                                };
+                              response.send(customers);
+                            
+                         }); //end query
+
+             return false;
+                }; //end customer
