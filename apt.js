@@ -1,23 +1,29 @@
 let express = require('express');
 let bodyParser = require('body-parser');
 let path = require('path');
+let http = require('http');
 let fs = require('fs');
 let mysql = require('mysql');
 let cors = require('cors');
+let jsonServer = require('json-server');
 
  let app = express();
 
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.use(cors());
 
 app.listen(3050,function(){
      console.log('Server started on port 3050...');
 });
+let customerList =[];
+let subNal = false;
+let cusNal =false;
+let router = ' ';
 
 //create connection
 const db = mysql.createConnection({
@@ -29,12 +35,12 @@ const db = mysql.createConnection({
 db.connect((err) => {
     if(err){
         throw err;
+        console.log('Not Connected to database.')
         }
     console.log('Connected to mysql data base.');
 });
 
 app.use(express.static('p5/homePage'));
-
  //Insert object into Data Base
  app.get('/productClient/:firstname/:lastname/:Email/:streetaddress/:Suite/:City/:State/:zipcode/:phonenumber', productClient);
  function productClient(request, response){
@@ -74,7 +80,7 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
 }; //end newClient
 
 //Display clients in database.
-       app.get('/allClients/', clientel);
+       app.get('/allSubscribers/', clientel);
        function clientel(request, response){
                         let firstName = ' ';
                         let lastName = ' ';
@@ -104,24 +110,34 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
                               phoneNumber = customers[i].phoneNumber;
 
                                  let Customers ={
-                                          firstName : firstName,
-                                          lastName : lastName,
-                                          email : email,
-                                          streetAddress : streetAddress,
-                                          suite : suite,
-                                          city : city,
-                                          state : state,
-                                          zipCode : zipCode,
-                                          phoneNumber : phoneNumber
+                                          FirstName : firstName,
+                                          LastName : lastName,
+                                          Email : email,
+                                          StreetAddress : streetAddress,
+                                          Suite : suite,
+                                          City : city,
+                                          State : state,
+                                          ZipCode : zipCode,
+                                          PhoneNumber : phoneNumber
                                             };
-                             console.log(Customers);
-                                };
-                              response.send(customers);
-                            
+                              console.log(Customers);
+                              customerList.push(Customers);
+                                };// end for loop
+
+                           //  response.writeHead(200,{'Content-Type':'text/plain'});  
+                           fs.writeFile('subscriberList.json',JSON.stringify({customerList}),function(err){
+                                   if(err){console.log(err);
+                                        }else{
+                                          console.log('List saved successfully.'); 
+                                        }
+                                 });
+                              response.send({customerList});
+                              subNal = true;
+                              cusNal = false;
                          }); //end query
 
-             return false;
-                }; //end clientel
+                        return false;
+                     }; //end clientel
 
            app.get('/allCustomers/', customer);
            function customer(request, response){
@@ -145,7 +161,7 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
                               firstname = customers[i].firstname;
                               lastname  = customers[i].lastname;
                               Email = customers[i].Email;
-                              streetaddress= customers[i].streetaddress;
+                              streetaddress = customers[i].streetaddress;
                               Suite = customers[i].Suite;
                               City = customers[i].City;
                               State = customers[i].State;
@@ -153,9 +169,9 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
                               phonenumber = customers[i].phonenumber;
 
                                  let Customers ={
-                                          Firstname : firstname,
+                                          FirstName : firstname,
                                           LastName : lastname,
-                                          email : Email,
+                                          Email : Email,
                                           StreetAddress : streetaddress,
                                           Suite : Suite,
                                           City : City,
@@ -163,11 +179,53 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
                                           ZipCode : zipcode,
                                           PhoneNumber : phonenumber
                                             };
-                             console.log(Customers);
-                                };
-                              response.send(customers);
-                            
-                         }); //end query
+                                 console.log(Customers);
+                                 customerList.push(Customers);
+                                };//end for loop
 
-             return false;
+                                 //  response.writeHead(200,{'Content-Type':'text/plain'});  
+                           fs.writeFile('customerList.json',JSON.stringify({customerList}),function(err){
+                                   if(err){console.log(err);
+                                        }else{
+                                          console.log('List saved successfully.'); 
+                                        }
+                                 });
+                             subNal = false;
+                             cusNal = true;
+                            response.send({customerList});
+                         }); //end query
+                        
+                           return false;               
                 }; //end customer
+
+                function subMembers(){
+                      // Returns an Express server
+                       let server = jsonServer.create();
+                       // Set default middlewares (logger, static, cors and no-cache)
+                           server.use(jsonServer.defaults());
+                      // Add custom routes
+                     // server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
+
+                     // Returns an Express router
+                      let router = jsonServer.router('subscriberList.json');
+                                   server.use(router);
+                                   server.listen(5000); 
+
+                     };
+                   subMembers();
+              
+                function listMembers(){
+                      // Returns an Express server
+                       let server = jsonServer.create();
+                       // Set default middlewares (logger, static, cors and no-cache)
+                           server.use(jsonServer.defaults());
+                      // Add custom routes
+                     // server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
+
+                     // Returns an Express router
+                      let router = jsonServer.router('customerList.json');
+                                   server.use(router);
+                                   server.listen(5050); 
+
+                            };
+                       listMembers();
