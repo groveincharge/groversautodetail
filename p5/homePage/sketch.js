@@ -125,7 +125,7 @@
          loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+email+'/'+streetAddress+'/'+suite+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
 
         function finished(data){
-                   console.log(subscriberInfo);
+                   console.log(data);
                   };  
                showSubscriber();          
         return vacbuyButton();

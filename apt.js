@@ -4,8 +4,6 @@ let path = require('path');
 let http = require('http');
 let fs = require('fs');
 let mysql = require('mysql');
-let cors = require('cors');
-let jsonServer = require('json-server');
 
  let app = express();
 
@@ -15,7 +13,6 @@ let jsonServer = require('json-server');
 
 // parse application/json
 //app.use(bodyParser.json());
-app.use(cors());
 
 app.listen(3050,function(){
      console.log('Server started on port 3050...');
@@ -123,17 +120,6 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
                               console.log(Customers);
                               customerList.push(Customers);
                                 };// end for loop
-
-                           //  response.writeHead(200,{'Content-Type':'text/plain'});  
-                           fs.writeFile('subscriberList.json',JSON.stringify({customerList}),function(err){
-                                   if(err){console.log(err);
-                                        }else{
-                                          console.log('List saved successfully.'); 
-                                        }
-                                 });
-                              response.send({customerList});
-                              subNal = true;
-                              cusNal = false;
                          }); //end query
 
                         return false;
@@ -183,49 +169,7 @@ app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:suite/:city/:st
                                  customerList.push(Customers);
                                 };//end for loop
 
-                                 //  response.writeHead(200,{'Content-Type':'text/plain'});  
-                           fs.writeFile('customerList.json',JSON.stringify({customerList}),function(err){
-                                   if(err){console.log(err);
-                                        }else{
-                                          console.log('List saved successfully.'); 
-                                        }
-                                 });
-                             subNal = false;
-                             cusNal = true;
-                            response.send({customerList});
                          }); //end query
                         
                            return false;               
                 }; //end customer
-
-                function subMembers(){
-                      // Returns an Express server
-                       let server = jsonServer.create();
-                       // Set default middlewares (logger, static, cors and no-cache)
-                           server.use(jsonServer.defaults());
-                      // Add custom routes
-                     // server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
-
-                     // Returns an Express router
-                      let router = jsonServer.router('subscriberList.json');
-                                   server.use(router);
-                                   server.listen(5000); 
-
-                     };
-                   subMembers();
-              
-                function listMembers(){
-                      // Returns an Express server
-                       let server = jsonServer.create();
-                       // Set default middlewares (logger, static, cors and no-cache)
-                           server.use(jsonServer.defaults());
-                      // Add custom routes
-                     // server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
-
-                     // Returns an Express router
-                      let router = jsonServer.router('customerList.json');
-                                   server.use(router);
-                                   server.listen(5050); 
-
-                            };
-                       listMembers();
