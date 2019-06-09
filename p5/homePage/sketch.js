@@ -8,7 +8,6 @@
  let lastName = ' ';
  let email = ' ';
  let streetAddress = ' ';
- let suite = ' ';
  let city = ' ';
  let state = ' ';
  let zipCode = ' ';
@@ -18,7 +17,6 @@
  let lastname = ' ';
  let Email = ' ';
  let streetaddress = ' ';
- let Suite = ' ';
  let City = ' ';
  let State = ' ';
  let zipcode = ' ';
@@ -88,8 +86,6 @@
                  customerEmail.html('Email: '+email);
              let customerstreetAddress = select('.streetAddress');
                  customerstreetAddress.html('Street: '+streetAddress);
-             let customerSuite = select('.suite');
-                 customerSuite.html('Suite: '+suite);
              let customerCity = select('.city');
                  customerCity.html('City: '+city);
              let customerState = select('.state');
@@ -117,12 +113,11 @@
               lastName = select('#lastName').value();
               email = select('#email').value();
               streetAddress = select('#streetAddress').value();
-              suite = select('#suite').value();
               city = select('#city').value();
               state = select('#state').value();
               zipCode =select('#zipCode').value();
               phoneNumber = select('#phoneNumber').value();
-         loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+email+'/'+streetAddress+'/'+suite+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
+         loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+email+'/'+streetAddress+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
 
         function finished(data){
                    console.log(data);
@@ -136,12 +131,11 @@
                  lastname = select('#lastname').value();
                  Email = select('#Email').value();
                  streetaddress = select('#streetaddress').value();
-                 Suite = select('#Suite').value();
                  City = select('#City').value();
                  State = select('#State').value();
                  zipcode =select('#zipcode').value();
                  phonenumber = select('#phonenumber').value();
-         loadJSON('/productClient/'+firstname+'/'+lastname+'/'+Email+'/'+streetaddress+'/'+Suite+'/'+City+'/'+State+'/'+zipcode+'/'+phonenumber, finished);
+         loadJSON('/productClient/'+firstname+'/'+lastname+'/'+Email+'/'+streetaddress+'/'+City+'/'+State+'/'+zipcode+'/'+phonenumber, finished);
     function finished(data){
          console.log(data);
                   };
@@ -160,8 +154,6 @@
                  customerEmail.html('Email: '+Email);
              let customerstreetAddress = select('.streetaddress');
                  customerstreetAddress.html('Street: '+streetaddress);
-             let customerSuite = select('.Suite');
-                 customerSuite.html('Suite: '+Suite);
              let customerCity = select('.City');
                  customerCity.html('City: '+City);
              let customerState = select('.State');
