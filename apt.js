@@ -35,10 +35,10 @@ db.connect((err) => {
 
 app.use(express.static('p5/homePage'));
  //Insert object into Data Base
- app.get('/productClient/:firstName/:lastName/:email/:address/:city/:state/:zipCode/:phoneNumber', productClient);
+ app.get('/productClient/:firstname/:lastname/:Email/:streetaddress/:City/:State/:zipcode/:phonenumber', productClient);
  function productClient(request, response){
     let data = request.params;
-    let post = {firstname: data.firstname, lastname: data.lastname, email: data.email, address: data.address, city: data.city, state: data.state, zipCode: data.zipCode, phoneNumber: data.phoneNumber};
+    let post = {firstName: data.firstname, lastName: data.lastname, email: data.Email, address: data.streetaddress, City: data.City, State: data.State, zipCode: data.zipcode, phoneNumber: data.phonenumber};
     let sql = 'INSERT INTO productclients SET ?';
     let query = db.query(sql, post,(err, result) =>{
   if(err) throw err;
@@ -46,10 +46,10 @@ app.use(express.static('p5/homePage'));
  });
  };//end productClient
 
-app.get('/subscriber/:firstName/:lastName/:email/:address/:city/:state/:zipCode/:phoneNumber', newClient);
+app.get('/subscriber/:firstName/:lastName/:email/:streetAddress/:city/:state/:zipCode/:phoneNumber', newClient);
  function newClient(request, response){
     let data = request.params;
-    let post = {firstName: data.firstName, lastName: data.lastName, email: data.email, address: data.address, city: data.city, state: data.state, zipCode: data.zipCode, phoneNumber: data.phoneNumber};
+    let post = {firstName: data.firstName, lastName: data.lastName, Email: data.email, Address: data.streetAddress, city: data.city, state: data.state, zipCode: data.zipCode, phoneNumber: data.phoneNumber};
  let sql = 'INSERT INTO clients SET ?';
  let query = db.query(sql, post,(err, result) =>{
   if(err) throw err;
