@@ -3,29 +3,29 @@ let bodyParser = require('body-parser');
 let path = require('path');
 let http = require('http');
 let fs = require('fs');
-//let mysql = require('mysql');
+let mysql = require('mysql');
 
  let app = express();
 
 
 // parse application/x-www-form-urlencoded
-//app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.listen(3050,function(){
      console.log('Server started on port 3050...');
 });
 
-//create connection
-//const db = mysql.createConnection({
- // host: 'localhost',
-  //user: 'groveman',
-  //password: 'WYN@$#+22see',
- // database : 'autodetailbase'
-//});
-/*db.connect((err) => {
+ //create connection
+    const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'groveman',
+    password: 'WYN@$#+22see',
+    database : 'autodetailbase'
+   });
+db.connect((err) => {
     if(err){
         throw err;
         console.log('Not Connected to database.')
@@ -34,11 +34,11 @@ app.listen(3050,function(){
        {
     console.log('Connected to mysql data base.');
   };
-});*/
+});
 
-/*app.use(express.static('p5/homePage'));
- Insert object into Data Base
- app.get('/productClient/:firstname/:lastname/:Email/:Address/:City/:State/:zipcode/:phonenumber', productClient);
+app.use(express.static('p5/homePage'));
+ //Insert object into Data Base
+ app.get('/customer/:firstname/:lastname/:Email/:Address/:City/:State/:zipcode/:phonenumber', productClient);
  function productClient(request, response){
     let data = request.params;
     let post = {firstName: data.firstname, lastName: data.lastname, email: data.Email, address: data.Address, City: data.City, State: data.State, zipCode: data.zipcode, phoneNumber: data.phonenumber};
@@ -190,44 +190,5 @@ app.get('/subscriber/:firstName/:lastName/:email/:address/:city/:state/:zipCode/
                          }); //end query
                         
                            return false;               
-                }; //end customer*/
-
-app.use(express.static(path.join( __dirname,'p5/homePage')));
-
- app.get('/subscriber/:firstname/:lastname/:Email/:Address/:City/:State/:zipcode/:phonenumber', productClient);
- function productClient(request, response){
-    let data = request.params;
-    let clientObject ={
-      Status:'Your Subscription is now Active.',
-      firstName: data.firstname,
-      lastName: data.lastname,
-      Email: data.Email,
-      streetAddress: data.Address,
-      city: data.City,
-      state: data.State,
-      zipCode: data.zipcode,
-      phoneNumber: data.phonenumber
-    };
-    console.log(clientObject);     
-  
-
- };//end productClient  
-
-  app.get('/customer/:firstname/:lastname/:Email/:Address/:City/:State/:zipcode/:phonenumber', productClient);
- function productClient(request, response){
-    let data = request.params;
-    let clientObject ={
-      Status:'Your Subscription is now Active.',
-      firstName: data.firstname,
-      lastName: data.lastname,
-      Email: data.Email,
-      streetAddress: data.Address,
-      city: data.City,
-      state: data.State,
-      zipCode: data.zipcode,
-      phoneNumber: data.phonenumber
-    };
-    console.log(clientObject);     
-  
-
- };//end productClient                  
+                }; //end customer
+                 
