@@ -287,27 +287,29 @@ body{
             text-align: center;
                    }   
           .seventh #minivacContainer #vacIntro p b{
-                    font-size: 18px;
+                    font-size: 20px;
                     color: #ffcc00;
                    } 
          
           .seventh #minivacContainer #voggle{
             text-align: center;
             width:90%;
+            padding: 18px;
             font-size:18px;
             height: 5%;
               margin-left: 5%;
             margin-top: 5%;
-            margin-bottom: 3%;
+            margin-bottom: 1%;
                 }         
         .seventh #minivacContainer #vacImage img{
                          display:block;
                          margin-left: 5%;
+                         margin-top: 15%;
                           } 
         .seventh #minivacContainer #vacDescription {
                                 font-size: 18px;
                                 margin-top: 5%;
-                                margin-bottom: 3%;
+                                margin-bottom: 5%;
                                 text-align: center;        
                                     }                  
          .seventh #minivacContainer #thanks{
@@ -457,16 +459,17 @@ body{
           color: #000000;
           text-align: center;
           font-size: 22px;
-          font-weight:bold; 
+          font-weight:bold;
+          margin-bottom: 1%;
                  }
       .nineth #joggle{
            text-align: center;
            width:90%;
+           padding: 18px;
            font-size:18px;
            margin-left: 5%;
            margin-top: 5%;
-           margin-bottom: 10%;
-           height: 5%;  
+           margin-bottom: 1%;  
            }    
    #firstName, #firstname {
        margin-top:3%;
@@ -569,13 +572,20 @@ body{
               color:#ffffff;
               width:96%; 
                  }
+    .nineth #productContainer #jumperIntro p b{
+                                 font-size: 20px;
+                                 color: #ffcc00;
+                                 }             
      .nineth #productContainer #showBuyer li{
                            list-style: none;
                            margin-left: 5%;
                          } 
         .nineth #productContainer #disclaimer{
                                       margin-top: 10%;
-                                     }                  
+                                     } 
+      .nineth #productContainer #disclaimer h1{
+                              margin-bottom: 25%;
+                                }                 
        .nineth #productContainer #disclaimer p{
                             margin-top:5%;
                             background-color:#009900;
