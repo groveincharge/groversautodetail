@@ -1,325 +1,267 @@
  let item = '  ';
- let subscriberInfo = {};
  let shippingPrice = 0;
  let totalPrice = 0;
  let jumperPrice = 0;
 
- let firstName = ' ';
- let lastName = ' ';
- let email = ' ';
- let address = ' ';
- let city = ' ';
- let state = ' ';
- let zipCode = ' ';
- let phoneNumber = ' ';
+ let subFirst = " "
+ let subLast = " ";
+ let subEmail = " ";
+ let subAddress = " ";
+ let subCity = " ";
+ let subState = " ";
+ let subZip = " ";
+ let subPhone = " ";
 
- let firstname = ' ';
- let lastname = ' ';
- let Email = ' ';
- let Address = ' ';
- let City = ' ';
- let State = ' ';
- let zipcode = ' ';
- let phonenumber = ' ';
-            
+ let cusFirst = ' ';
+ let cusLast = ' ';
+ let cusEmail = ' ';
+ let cusAddress = ' ';
+ let cusCity = ' ';
+ let cusState = ' ';
+ let cusZip = ' ';
+ let cusPhone = ' ';
 
-  function hideForm(){
-       let miniVac = select('#minivacContainer');
-           miniVac.show();
-       let vacIntro = select('#vacIntro');
-           vacIntro.show(); 
-       let vacImage = select('#vacImage');
-           vacImage.show(); 
-       let voggle = select('.voggle');    
-           voggle.show();
-       let vacDescription = select('#vacDescription');
-           vacDescription.hide(); 
-       let vacuumId = select('#vacuumId');
-           vacuumId.hide();
-       let subForm = select('#subForm');
-           subForm.hide(); 
-       let showSubscriber = select('#showSubscriber');
-           showSubscriber.hide();
-       let thanks = select('#thanks');
-            thanks.hide(); 
-       let subscribe = select('.subscribe');
-           subscribe.show();                                     
+ function hideForm(){
+        suiteFour();
+        suitesix();
+        suiteseven();
+        togglevacPicture();
+        suitenine();
+        suiteeight();
+       };
 
-      let intro = select('#intro');
-          intro.show();
-     let serviceContainer = select('#serviceContainer');
-         serviceContainer.hide();
+    function togglevacPicture(){                
+            let picture =  document.getElementById("vacImage");
+            let features =  document.getElementById("vacDescription");
+            let toggle =  document.getElementById("voggle").value;
 
-     let productContainer = select('#productContainer');
-         productContainer.show();           
-          
-   let buyButton = select('#buyButton');
-       buyButton.hide();   
-    let jumperIntro = select('#jumperIntro');
-        jumperIntro.show(); 
-    let jumpStarter = select('#jumpStarter');
-         jumpStarter.show();
-     let description = select('#description'); 
-        description.hide();  
-     let joggle = select('#joggle');
-         joggle.show();  
-     let disclaimer = select('#disclaimer');
-         disclaimer.hide(); 
-      let productForm = select('#productForm');
-          productForm.hide();                         
-    let probuyButton = select('#probuyButton');
-        probuyButton.hide(); 
-    let productId = select('#productId');
-        productId.hide();
-    let checkOut = select('.checkOut');
-        checkOut.show();    
-     let showBuyer = select('#showBuyer');
-                showBuyer.hide();                      
-            };  
+                if((toggle) === ("description"))
+                          {
+                      if(features.style.display = "none")
+                             {
+                         features.style.display = "block";
+                         picture.style.display = "none";
+                             }
+                        else
+                          {
+                           picture.style.display = "none";
+                         }      
+                       };
+                                                
+               if((toggle) === ('mini-Vac'))
+                           {
+                        if(picture.style.display = "none")
+                              {
+                             picture.style.display = "block";
+                             features.style.display = "none";
+                            } 
+                            else
+                              { features.style.display = "none";}
+                           };
+                        
+               return false;
+               
+         };//end togglevacPicture
+
+      function togglejumperPicture(){
+                   let jumpPicture =  document.getElementById("jumpStarter");
+                   let jumpFeatures =  document.getElementById("description");
+                   let jumpToggle =  document.getElementById("joggle").value;
+
+                if((jumpToggle) === ("description"))
+                          {
+                      if(jumpFeatures.style.display = "none")
+                             {
+                         jumpFeatures.style.display = "block";
+                         jumpPicture.style.display = "none";
+                             }
+                        else
+                          {
+                           jumpPicture.style.display = "none";
+                         }      
+                       };
+                                                
+               if((jumpToggle) === ('jumpStarter'))
+                           {
+                        if(jumpPicture.style.display = "none")
+                              {
+                             jumpPicture.style.display = "block";
+                             jumpFeatures.style.display = "none";
+                            } 
+                            else
+                              { jumpFeatures.style.display = "none";}
+                           };
+               return false;
+         };//end togglejumpPicture    
+
+function suiteFour(){
+          document.getElementById("subscribe").style.display = "block";
+          document.getElementById("vacuumId").style.display = "none";
+          document.getElementById("buyButton").style.display = "none";
+          document.getElementById("subscribe").addEventListener("click", function(){
+                                        document.getElementById("subscribe").style.display = "none";
+                                        document.getElementById("vacuumId").style.display = "block";
+                                                 });
+
+           document.getElementById("vacuumId").addEventListener("click", function(){
+                                        document.getElementById("vacuumId").style.display = "none";
+                                         document.getElementById("buyButton").style.display = "block";
+                                                 })
+                                      };
+
+  function suitesix(){
+          document.getElementById("checkOut").style.display = "block";
+          document.getElementById("productId").style.display = "none"; 
+          document.getElementById("probuyButton").style.display = "none";
+          document.getElementById("checkOut").addEventListener("click", function(){
+                                        document.getElementById("checkOut").style.display = "none";
+                                        document.getElementById("productId").style.display = "block"; 
+                                                 });
+
+           document.getElementById("productId").addEventListener("click", function(){
+                                        document.getElementById("productId").style.display = "none";
+                                        document.getElementById("probuyButton").style.display = "block";
+                                                 })
+                                      };
+
+   function suiteseven(){
+                  document.getElementById("vacIntro").style.display = "block";
+                  document.getElementById("vacImage").style.display = "block"; 
+                  document.getElementById("vacDescription").style.display = "none";
+                  document.getElementById("showSubscriber").style.display = "none";
+                  document.getElementById("subForm").style.display = "none"; 
+                  document.getElementById("thanks").style.display = "none";
+                  document.getElementById("voggle").style.display = "block";
+                  document.getElementById("subscribe").addEventListener("click", function(){
+                                     if(document.getElementById("vacDescription").style.display = "block"){
+                                          document.getElementById("vacDescription").style.display = "none";
+                                         };
+                                         document.getElementById("vacIntro").style.display = "none";
+                                         document.getElementById("vacImage").style.display = "none";  
+                                         document.getElementById("subForm").style.display = "block";
+                                         document.getElementById("voggle").style.display = "none";
+                                                 });
+                   document.getElementById("vacuumId").addEventListener("click", function(){ 
+                                        document.getElementById("showSubscriber").style.display = "block";
+                                        document.getElementById("subForm").style.display = "none"; 
+                                        document.getElementById("thanks").style.display = "block";
+                                        document.getElementById("voggle").style.display = "none";
+                                        newSubscriber();
+                                                 }) 
+                 }; //end suiteseven   
+
+        function suitenine(){
+                  document.getElementById("jumperIntro").style.display = "block";
+                  document.getElementById("jumpStarter").style.display = "block"; 
+                  document.getElementById("description").style.display = "none";
+                  document.getElementById("disclaimer").style.display = "none";
+                  document.getElementById("showBuyer").style.display = "none"; 
+                  document.getElementById("productForm").style.display = "none";
+                  document.getElementById("joggle").style.display = "block";
+                  document.getElementById("checkOut").addEventListener("click", function(){
+                                 if(document.getElementById("description").style.display = "block"){
+                                          document.getElementById("description").style.display = "none";
+                                         };
+                                         document.getElementById("jumperIntro").style.display = "none";
+                                         document.getElementById("jumpStarter").style.display = "none";  
+                                         document.getElementById("productForm").style.display = "block";
+                                         document.getElementById("joggle").style.display = "none";
+                                                 });
+                   document.getElementById("productId").addEventListener("click", function(){ 
+                                        document.getElementById("showBuyer").style.display = "block";
+                                        document.getElementById("productForm").style.display = "none"; 
+                                        document.getElementById("disclaimer").style.display = "block";
+                                         newCustomer();
+                                                 }) 
+                 }; //end suitenine 
+       function suiteeight(){
+                      document.getElementById("intro").style.display = "block";
+                      document.getElementById("serviceChart").style.display = "none"; 
+                      document.getElementById("priceChart").style.display = "none";
+                      document.getElementById("serviceInput").addEventListener("click", function(){ 
+                                   document.getElementById("intro").style.display = "none";
+                                   document.getElementById("serviceChart").style.display = "block";
+                                   document.getElementById("priceChart").style.display = "none"; 
+                                                 }); 
+                      document.getElementById("priceInput").addEventListener("click", function(){ 
+                                   document.getElementById("intro").style.display = "none";
+                                   document.getElementById("serviceChart").style.display = "none";
+                                   document.getElementById("priceChart").style.display = "block"; 
+                                                 });
+                   }; //end suiteeight                                                     
 
  function newSubscriber(){ 
-              firstName = select('.firstName').value();
-              lastName = select('.lastName').value();
-              email = select('.email').value();
-              address = select('.address').value();
-              city = select('.city').value();
-              state = select('.state').value();
-              zipCode =select('.zipCode').value();
-              phoneNumber = select('.phoneNumber').value();
-         loadJSON('/subscriber/'+firstName+'/'+lastName+'/'+email+'/'+address+'/'+city+'/'+state+'/'+zipCode+'/'+phoneNumber, finished);
+              subFirst = document.getElementById('firstName').value;
+              subLast = document.getElementById('lastName').value;
+              subEmail = document.getElementById('email').value;
+              subAddress = document.getElementById('address').value;
+              subCity = document.getElementById('city').value;
+              subState = document.getElementById('state').value;
+              subZip = document.getElementById('zipCode').value;
+              subPhone = document.getElementById('phoneNumber').value;
+     loadJSON('/subscriber/'+subFirst+'/'+subLast+'/'+subEmail+'/'+subAddress+'/'+subCity+'/'+subState+'/'+subZip+'/'+subPhone, finished);
 
         function finished(data){ 
                               
                     
             };//end finished 
-            displaySubscriber();                    
-        return vacbuyButton();
-         };//end newSubscriber
+               displaySubscriber();                         
+         };//end newSubscriber 
+
+        // module.exports = subObject;  
+         /* module.exports = {
+                 First: subFirst,
+                 Last: subLast,
+                 Email: subEmail,
+                 Address: subAddress,
+                  City: subCity,
+                  State: subState,
+                  Zip: subZip,
+                  phone: subPhone
+                   };*/   
+
          function displaySubscriber() {
-                          let displayStatus = select('#displayStatus');
-                              displayStatus.html('Thanks for the Subscription');
-                          let displayfirstName = select('#displayfirstName');              
-                               displayfirstName.html('First Name: '+firstName);
-                          let displaylastName = select('#displaylastName');              
-                               displaylastName.html('Last Name: '+lastName); 
-                           let displayemail = select('#displayemail');              
-                               displayemail.html('Email: '+email);
-                            let displayaddress = select('#displayaddress');              
-                               displayaddress.html('Address: '+address);
-                            let displaycity = select('#displaycity');              
-                               displaycity.html('City: '+city); 
-                             let displaystate = select('#displaystate');              
-                               displaystate.html('State: '+state);
-                             let displayzipCode = select('#displayzipCode');              
-                               displayzipCode.html('Zip Code: '+zipCode);
-                           let displayphoneNumber = select('#displayphoneNumber');              
-                               displayphoneNumber.html('Phone Number: '+phoneNumber);                      
-                               };
+                   document.getElementById("displayStatus").innerHTML = "Subscription accepted.";
+                   document.getElementById("displayfirstName").innerHTML = "First: "+subFirst;
+                   document.getElementById("displaylastName").innerHTML = "Last: "+subLast;
+                   document.getElementById("displayemail").innerHTML = "Email: "+subEmail;
+                   document.getElementById("displayaddress").innerHTML = "Address: "+subAddress;
+                   document.getElementById("displaycity").innerHTML = "City: "+subCity;
+                   document.getElementById("displaystate").innerHTML = "State: "+subState; 
+                   document.getElementById("displayzipCode").innerHTML = "Zip: "+subZip;
+                   document.getElementById("displayphoneNumber").innerHTML = "Phone: "+subPhone;                   
+                               };                    
+                     
+         function newCustomer(){ 
+              cusFirst = document.getElementById('firstname').value;
+              cusLast = document.getElementById('lastname').value;
+              cusEmail = document.getElementById('Email').value;
+              cusAddress = document.getElementById('Address').value;
+              cusCity = document.getElementById('City').value;
+              cusState = document.getElementById('State').value;
+              cusZip = document.getElementById('zipcode').value;
+              cusPhone = document.getElementById('phonenumber').value;
 
-           function vacbuyButton(){ 
-            let miniVac = select('#minivacContainer');
-                miniVac.show(); 
-            let vacIntro = select('#vacIntro');
-                vacIntro.hide();
-            let vacImage = select('#vacImage');
-                vacImage.hide();  
-            let vacDescription = select('#vacDescription');
-                vacDescription.hide();       
-           let vacuumId = select('#vacuumId');
-               vacuumId.hide(); 
-           let buyButton = select('#buyButton');
-               buyButton.show();
-           let subForm = select('#subForm');
-               subForm.hide();
-           let thanks= select('#thanks');
-               thanks.show(); 
-           let showSubscriber = select('#showSubscriber');
-                showSubscriber.show();    
-               return false;   
-                    };
+        loadJSON('/customer/'+cusFirst+'/'+cusLast+'/'+cusEmail+'/'+cusAddress+'/'+cusCity+'/'+cusState+'/'+cusZip+'/'+cusPhone, finished);
 
+        function finished(data){ 
+                              
+                    
+            };//end finished   
+               displayCustomer();                          
+         };//end newSubscriber  
 
- function subscribe(){ 
-           let miniVac = select('#minivacContainer');
-               miniVac.show();
-            let vacIntro = select('#vacIntro');
-               vacIntro.hide();    
-           let buyButton = select('#buyButton');
-               buyButton.hide();    
-           let vacImage = select('#vacImage');
-               vacImage.hide(); 
-            let vacDescription = select('#vacDescription');
-                vacDescription.hide(); 
-            let showSubscriber = select('#showSubscriber');
-                 showSubscriber.hide();               
-           let subForm = select('#subForm');
-               subForm.show(); 
-            let thanks = select('#thanks');
-                thanks.hide();    
-           let subscribe = select('.subscribe');
-               subscribe.hide(); 
-            let vacuumId = select('#vacuumId');
-                vacuumId.show(); 
-            let voggle = select('.voggle');    
-                voggle.hide();                
-                   };
-               
-
-          function togglevacPicture(){
-            let miniVac = select('#minivacContainer');
-                miniVac.show();
-            let picture = select('#vacImage');
-            let features = select('#vacDescription');
-            let toggle = select('.voggle').value();
-             console.log(toggle);
-               if(toggle === 'mini-Vac'){
-                    picture.show();
-                    features.hide();
-               }
-               else if(toggle === 'description'){
-                     picture.hide();
-                     features.show();       
-               };
-               return false;
-         };//end togglePicture  
-
-      function procusInfo(){ 
-                 firstname = select('.firstname').value();
-                 lastname = select('.lastname').value();
-                 Email = select('.Email').value();
-                 Address = select('.Address').value();
-                 City = select('.City').value();
-                 State = select('.State').value();
-                 zipcode =select('.zipcode').value();
-                 phonenumber = select('.phonenumber').value();
-         loadJSON('/productClient/'+firstname+'/'+lastname+'/'+Email+'/'+Address+'/'+City+'/'+State+'/'+zipcode+'/'+phonenumber, finished);
-         function finished(data){                           
-    
-
-                          };//end finished 
-
-               displayCustomer();
-              return productBuyer();
-               };//end procusInfo 
-
-                  function displayCustomer() {
-                          let displaystatus = select('#displaystatus');
-                              displaystatus.html('We appreciate your business.');
-                          let displayfirstname = select('#displayfirstname');              
-                               displayfirstname.html('First Name: '+firstname);
-                          let displaylastname = select('#displaylastname');              
-                               displaylastname.html('Last Name: '+lastname); 
-                           let displayEmail = select('#displayEmail');              
-                               displayEmail.html('Email: '+Email);
-                            let displayAddress = select('#displayAddress');              
-                               displayAddress.html('Address: '+Address);
-                            let displayCity = select('#displayCity');              
-                               displayCity.html('City: '+City); 
-                             let displayState = select('#displayState');              
-                               displayState.html('State: '+State);
-                             let displayzipcode = select('#displayzipcode');              
-                               displayzipcode.html('Zip Code: '+zipcode);
-                           let displayphonenumber = select('#displayphonenumber');              
-                               displayphonenumber.html('Phone Number: '+phonenumber);                      
-                               };     
-
-       function productBuyer(){
-           let productContainer = select('#productContainer')
-               productContainer.show(); 
-            let jumpStarter = select('#jumpStarter');
-                jumpStarter.hide();
-             let jumperIntro = select('#jumperIntro');
-                 jumperIntro.hide();
-             let description = select('#description');
-                 description.hide();
-              let joggle = select('#joggle');
-                  joggle.hide();                 
-           let productForm = select('#productForm');
-               productForm.hide();   
-           let productId = select('#productId');
-               productId.hide();             
-           let disclaimer = select('#disclaimer');
-               disclaimer.show(); 
-           let showBuyer = select('#showBuyer');
-               showBuyer.show();           
-           let probuyButton = select('#probuyButton');
-               probuyButton.show();
-               return false;     
-           };//end productBuyer                               
-
-    function jumperformButton(){
-           let productContainer = select('#productContainer');
-               productContainer.show();
-           let productForm = select('#productForm');
-               productForm.show();     
-           let jumperIntro = select('#jumperIntro');
-               jumperIntro.hide();
-            let jumpStarter = select('#jumpStarter');
-                jumpStarter.hide();         
-           let probuyButton = select('#probuyButton');
-               probuyButton.hide(); 
-            let description = select('#description');
-                description.hide();    
-           let disclaimer = select('#disclaimer');
-               disclaimer.hide();       
-            let showBuyer = select('#showBuyer');
-                showBuyer.hide(); 
-             let checkOut = select('.checkOut');
-                 checkOut.hide();     
-            let productId = select('#productId');
-                productId.show();
-             let joggle = select('#joggle');
-                 joggle.hide();                     
-                  };            
-
- function togglejumperPicture(){
-             let productContainer = select('#productContainer')
-                 productContainer.show(); 
-            let jumpPicture = select('#jumpStarter');
-            let jumpFeatures = select('#description');
-            let prices = select('#prices');
-            let checkOut = select('.checkOut');
-            let jumpToggle = select('#joggle').value();
-      
-               if(jumpToggle === 'jumpStarter'){
-                    jumpPicture.show();
-                    jumpFeatures.hide();
-                    prices.hide();
-                    checkOut.show();
-               }
-               else if(jumpToggle === 'description'){
-                     jumpPicture.hide();
-                     jumpFeatures.show();
-                     prices.hide();
-                     checkOut.show();      
-               };
-               return false;
-         };//end togglejumpPicture
-
-   function services(){
-       let intro = select('#intro');
-           intro.hide();
-       let serviceContainer = select('#serviceContainer');
-           serviceContainer.show();
-       let serviceChart = select('#serviceChart');
-           serviceChart.show();     
-    let priceChart = select('#priceChart');
-        priceChart.hide();   
-        return false;
-              };
-    
- function showpriceChart(){
-       let intro = select('#intro');
-           intro.hide();
-       let serviceContainer = select('#serviceContainer');
-           serviceContainer.show();
-       let serviceChart = select('#serviceChart');
-           serviceChart.hide();       
-    let priceChart = select('#priceChart');
-        priceChart.show();
-     return false;
-                };//end showpriceChart
-
+         function displayCustomer() {
+                          document.getElementById("displaystatus").innerHTML = "We appreciate your purchase.";
+                          document.getElementById("displayfirstname").innerHTML = "First Name: "+cusFirst;
+                          document.getElementById("displaylastname").innerHTML = "Last Name: "+cusLast;
+                          document.getElementById("displayEmail").innerHTML = "Email: "+cusEmail;
+                          document.getElementById("displayAddress").innerHTML = "Address: "+cusAddress;
+                          document.getElementById("displayCity").innerHTML = "City: "+cusCity;
+                          document.getElementById("displayState").innerHTML = "State: "+cusState; 
+                          document.getElementById("displayzipcode").innerHTML = "Zip Code: "+cusZip;
+                          document.getElementById("displayphonenumber").innerHTML = "Phone Number: "+cusPhone;                     
+                               };           
 function draw() {
  
     };

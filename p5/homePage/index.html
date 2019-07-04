@@ -7,12 +7,13 @@
     <meta name="keyword " content="auto detail,car wash, mobile detail" />
     <style> body {padding: 0; margin: 0;} </style>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
-    <!--<script src="../p5.min.js"></script>-->
+    <script src="../p5.min.js"></script>
     <script src="p5.dom.js"></script>
-    <!--<script src="../addons/p5.sound.min.js"></script>-->
+    <script src="../addons/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
-    <link rel="stylesheet" type="text/css" href="newstyle.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
+
 
   <body onload="return hideForm()">
 
@@ -27,60 +28,55 @@
           <h1>Accepting Subscribers</h1>
         </div>
        <div class="second">
-           <h1>Welcome to norfolkautodetail.com</h1>
+           <h1>norfolkautodetail.com</h1>
            <h2>(757) 581-9156</h2>
        </div>
        <div class="third">
               <h1>Featured Product</h1>
           </div>
-       <div class="forth">
-            <input type="submit" class="subscribe" value="Subscription Form" onclick="return subscribe()">
-            <input type="submit"  id="vacuumId" value="Subscribe"  onclick="return newSubscriber()">
-    <div id="buyButton">
-     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="F57BMXJQQAVSN">
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-      </div><!--end buyButton-->
 
-     </div><!--end forth-->  
+       <div class="fourth">
+            <input type="submit" id="subscribe" value="Subscriber"/>
+            <input type="submit" id="vacuumId" value="Submit Info"/>
+    <div id="buyButton">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="F57BMXJQQAVSN">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div><!--end buyButton-->
+        </div><!--fourth-->
 
        <div class="fifth">
-                 <div class="services">
-          <button onclick="return services()">Services</button>
-          <button onclick="return showpriceChart()">Price Chart</button>
+          <div id="services">
+           <input type="submit"  id="serviceInput" value="Services"/>
+           <input type="submit" id="priceInput" value="Price Chart"/>
         </div><!--end services-->
-   
-    </div><!--end fifth-->
+       </div><!--fifth-->
 
-    <div class="sixth">
-        <input type="submit" class="checkOut" value="Proceed to Checkout" onclick="return jumperformButton()"/>
-      <!--end checkOut-->
-      <input type="submit" id="productId" value="Check Out" onclick="return procusInfo()"/>
-        <div id="probuyButton">
+       <div class="sixth">
+            <input type="submit" id="checkOut" value="Customer"/>
+            <input type="submit" id="productId" value="Submit Info"/>
+          <div id="probuyButton">
            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="UVU5XCZ7W9D7U">
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+             <input type="hidden" name="cmd" value="_s-xclick">
+             <input type="hidden" name="hosted_button_id" value="UVU5XCZ7W9D7U">
+             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+           <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
           </form>
       </div><!--probuyButton-->
-
-  </div><!--end sixth-->
+        </div><!--sixth-->
 
        <div class="seventh">
-           <h1>Subscription Incentive</h1>
+         <h1>Subscription Offer</h1>
 
     <div id="minivacContainer"> 
        <div id="vacIntro">
         <p> This Mini-Vac retails for <b>$ 79.99</b>. 
             New Subscribers to <b>Grover's Auto Detail</b> will receive it for
-            Just <b>$ 39.99</b>. Price includes <b>shipping & handling</b>.
-            This compact Mini-Vac gets the job done.  A handy and convevient tool for 
-            your vehicle. <b>Get Updates </b>about new and discounted
-           Products and Services as the seasons change.
+            Just <b>$ 39.99</b>. Price includes <b>shipping & handling</b>.The longer the mess sits, the
+            harder it is to clean. This compact Mini-Vac gets the job done.  A handy and convevient tool for your vehicle.
        </p>
      </div><!--end vacIntro-->
       
@@ -90,8 +86,7 @@
        </div>
 
       <div id="vacDescription">
-      <p> Feature below: 
-       Package:1*vacuum 
+      <p> 
        cleaner Material:ABS 
        Size:34cm*9.5cm*10cm
        (13.39"*3.74"*3.94")/L*W*H 
@@ -102,26 +97,26 @@
        Size:16.5cm*4cm/6.50"*1.57" Weight:50g 
        Designed to clean blinds
        ,keyboard, air-condition,etc.
-       Washable and convenient.
-       Insert mini-blind cleaner,
-       one roller between each slat.
-       100% brand new and high quality
-        Unique design,very popular.
       </p>
        </div><!--end vacDescription-->
 
+        <select id="voggle" onclick="return togglevacPicture()">
+        <option value="mini-Vac">Mini-Vac</option>
+        <option value="description">Description</option>
+      </select> 
+
       <div id="subForm">
-      <fieldset>
       <h1>Home/Office</h1><br/>
-     First Name: <input type="text" class="firstName"/><br/><br/>
-     Last Name: <input type="text" class="lastName"/><br/><br/>
-     Email: <input type="email" class="email"/><br /><br/>
-     Street Address: <input type="text" class="address"/><br/><br/>
-     City: <input type="text" class="city"/><br/><br/>
-     State: <input type="text" class="state"/><br/><br/>
-     Zip Code: <input type="text" class="zipCode"/><br/><br/>
-     Phone Number: <input type="text" class="phoneNumber"/><br/><br/>
-    </fieldset>
+     <form> 
+     First: <input type="text" id="firstName" name="First" /><br/><br/>
+     Last: <input type="text" id="lastName" name="Last" /><br/><br/>
+     Email: <input type="email" id="email" name="Email" /><br /><br/>
+     Address: <input type="text" id="address" name="Address" /><br/><br/>
+     City: <input type="text" id="city" name="City" /><br/><br/>
+     State: <input type="text" id="state" name="State" /><br/><br/>
+     Zip: <input type="text" id="zipCode" name="Zip" /><br/><br/>
+     Phone: <input type="text" id="phoneNumber" name="Phone" /><br/>
+    </form>
      </div><!--end subForm-->
 
       <div id="showSubscriber">
@@ -142,24 +137,17 @@
          through <b>Paypal</b>, and item will be shipped to subscriber address. All new subscribers 
          will receive a <b>comfirmatiom email</b> within 24hrs.</span>
         </div><!--end thanks-->
-      <select class="voggle" onclick="return togglevacPicture()">
-        <option value="mini-Vac">Mini-Vac</option>
-        <option value="description">Description</option>
-      </select> 
-
-    </div><!--end minivacContainer-->
-
-
-      </div><!--end seventh-->
+       </div><!--end minivacContainer-->
+     </div><!--seventh-->
 
        <div class="eighth">
-
+          
          <div id="intro">
          <span><strong>Norfolkautodetail.com</strong> is the place to contact for your professional auto detailing needs. Drop that vehicle off by 9:00 am for an early afternoon pick-up. We work to accommadate your schedule. Call at least one day ahead to ensure appointment availability. We service the people of Virginia Beach,
        Chesapeake, Norfolk, Portsmouth, Hampton and Newport News. <strong>Professional auto detailing </strong>is mainly
        a self learnt skill. We have the knowledge and experience to get the job done right. Upgrade the
        look and feel of your vehicle with an awesome detail job, <strong>Today!!</strong>
-        </span>
+        </span><br>
         <img src="imageFolder/feellinggood.png" alt="Mid-Size Car" width="90%" height="90%"/>
     </div><!--end intro-->
 
@@ -257,11 +245,10 @@
   </div><!--end priceChart-->
 
     </div><!--end serviceContainer--> 
-
-       </div><!--end eighth-->
+     </div><!--eight-->
 
        <div class="nineth">
-            <h1>Compact Jumpstarter</h1>
+           <h1>Jumpstarter</h1>
 
            <div id="productContainer" >
     <!--  <h1>Compact Jump Starter<h1>-->
@@ -269,7 +256,7 @@
             <p>This Compact Jump Starter is a must for your Vehicle. This is not your
             conventional Jump Starter. It is lightweight, powerful, and easy to operate. It has
             a flashlight and conveniently placed USB ports for charging Phones, 
-           computers and other USB port products. Jump Start any Vehicle with a dead battery, cars, SUVs,Vans or Pick-up Trucks.
+           computers and other USB port products.
            </p>
            </div><!--end jumperIntro-->
 
@@ -289,16 +276,23 @@
       7. LED Quantity: 3 
       8. Battery Capacity: 50800Mah 
       9.Size: about 17*8*4 cm / 6.69*3.15*1.57 in 
-     10.Scope: Mobile phones, PSP, tablet, MP4, PMP, GPS and so on. 
-      Packing list: 
-     1* automotive mobile power supply 
-     1* charger 
-     1* car charger 
-     1* auto positive and negative ignition clip 
-     1* four in one USB data line 
-     1* instruction
+     10.Scope: Mobile phones, PSP, 
+     tablet, MP4, PMP, GPS and so on. 
    </p>
       </div><!--end description-->
+
+
+    <div id="productForm">
+      <h1>Home/Office</h1><br/>
+     First: <input type="text" id="firstname"/><br/><br/>
+     Last: <input type="text" id="lastname"/><br/><br/>
+     Email: <input type="email" id="Email"/><br /><br/>
+     Address: <input type="text" id="Address"/><br/><br/>
+     City: <input type="text" id="City"/><br/><br/>
+     State: <input type="text" id="State"/><br/><br/>
+     Zip: <input type="text" id="zipcode"/><br/><br/>
+     Phone: <input type="text" id="phonenumber"/>
+  </div><!--end productForm-->
 
         <div id="showBuyer">
            <li id="displaystatus"></li>
@@ -319,26 +313,8 @@
              having a comfortable buying experience.
              You will receive confirmation of you purchase by
               email within 24hours.
-            Complete your transaction by clicking the <b>Buy Button</b>.
-           All monetary transactions are processed through <b>Paypal</b>,
-            and item will be shipped to the above address. All customers
-            will receive a <b>comfirmatiom email</b> within 24hrs.
-         </p>
+            </p>
           </div><!--end disclaimer-->
-
-    <div id="productForm">
-      <fieldset>
-      <h1>Home/Office</h1><br/>
-     First Name: <input type="text" class="firstname"/><br/><br/>
-     Last Name: <input type="text" class="lastname"/><br/><br/>
-     Email: <input type="email" class="Email"/><br /><br/><br/>
-     Street Address: <input type="text" class="Address"/><br/><br/>
-     City: <input type="text" class="City"/><br/><br/>
-     State: <input type="text" class="State"/><br/><br/>
-     Zip Code: <input type="text" class="zipcode"/><br/><br/>
-     Phone Number: <input type="text" class="phonenumber"/>
-    </fieldset>
-  </div><!--end productForm-->
 
     <select id="joggle" onclick="return togglejumperPicture()">
         <option value="jumpStarter">Jump Starter</option>
@@ -346,8 +322,13 @@
       </select>
 
   </div> <!--end productContainer-->
-  </div><!--end nineth-->
+  </div><!--nineth-->
+       <div class="tenth">ten</div>
+       <div class="eleventh">eleven</div>
+       <div class="twelveth">twelve</div>
   </div><!--end gird_items-->
-      </body>
-</html>
+  
+  </body>
+  </html>
+
 
