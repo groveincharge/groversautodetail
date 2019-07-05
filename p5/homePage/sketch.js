@@ -24,8 +24,8 @@
  function hideForm(){
         suiteFour();
         suitesix();
-        suiteseven();
         togglevacPicture();
+        suiteseven();
         suitenine();
         suiteeight();
        };
