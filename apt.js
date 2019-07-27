@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.listen(3050,function(){
-     console.log('Server started on port 3050...');
+app.listen(5550,function(){
+     console.log('Server started on port 5550...');
 });
 
  //create connection
@@ -36,13 +36,13 @@ db.connect((err) => {
   };
 });
 
-app.use(express.static('p5/homePage'));
+app.use(express.static('p5/homePage/'));
  //Insert object into Data Base
  app.get('/customer/:firstname/:lastname/:Email/:Address/:City/:State/:zipcode/:phonenumber', productClient);
  function productClient(request, response){
     let data = request.params;
     let post = {firstName: data.firstname, lastName: data.lastname, email: data.Email, address: data.Address, City: data.City, State: data.State, zipCode: data.zipcode, phoneNumber: data.phonenumber};
-    let sql = 'INSERT INTO productclients SET ?';
+    let sql = 'INSERT INTO customers SET ?';
     let query = db.query(sql, post,(err, result) =>{
   if(err) 
     {throw err}
@@ -70,7 +70,7 @@ app.get('/subscriber/:firstName/:lastName/:email/:address/:city/:state/:zipCode/
  function newClient(request, response){
     let data = request.params;
     let post = {firstName: data.firstName, lastName: data.lastName, email: data.email, address: data.address, city: data.city, state: data.state, zipCode: data.zipCode, phoneNumber: data.phoneNumber};
- let sql = 'INSERT INTO clients SET ?';
+ let sql = 'INSERT INTO subscribers SET ?';
  let query = db.query(sql, post,(err, result) =>{
   if(err)
    {throw err}
